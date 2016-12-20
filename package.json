@@ -15,7 +15,7 @@
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && npm clean-demo",
     "start": "nwb serve-react-demo",
-    "test": "nwb test",
+    "test": "jest",
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server",
     "test:jest": "jest"
