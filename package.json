@@ -26,6 +26,7 @@
     "bluebird": "^3.4.6",
     "localforage": "^1.4.3",
     "lodash": "^4.17.2",
+    "object-assign": "^4.1.0",
     "soundfont-player": "^0.10.5"
   },
   "peerDependencies": {
