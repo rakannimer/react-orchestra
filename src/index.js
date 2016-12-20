@@ -1,9 +1,32 @@
 import React from 'react'
 
-export default React.createClass({
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
-})
+import {
+  Note,
+  Instrument,
+  Orchestra,
+} from './platforms/web/';
+
+export default {
+  Instrument,
+  Note,
+  Orchestra,
+}
+
+export {
+  Instrument,
+  Note,
+  Orchestra,
+};
+
+
+// class App extends React.Component {
+//   render() {
+//     return <div>
+//       <Note />
+//       <Instrument />
+//       <Orchestra />
+//       Orchestra web main
+//     </div>
+//   }
+// }
+// export default App;

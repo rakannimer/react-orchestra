@@ -1,13 +1,20 @@
 import React from 'react'
 import {render} from 'react-dom'
 
-import Component from '../../src'
+import { Instrument, Orchestra, Note } from '../../src'
+import StaticInstrumentExample from './components/static-instrument-example';
 
 let Demo = React.createClass({
   render() {
     return <div>
-      <h1>react-orchestra Demo</h1>
-      <Component/>
+    <div>
+      <h2>Welcome to React instruments web</h2>
+      <h3>A non-interactive instrument that can play notes and sync ui</h3>
+      <div>
+        <StaticInstrumentExample />
+      </div>
+    </div>
+
     </div>
   }
 })
