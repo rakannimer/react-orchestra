@@ -1,0 +1,29 @@
+exports[`test Note renders correctly 1`] = `
+<div
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}>
+  <div>
+    Note container
+  </div>
+</div>
+`;
+
+exports[`test Note renders correctly 2`] = `
+<div
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}>
+  <div>
+    Note container
+  </div>
+</div>
+`;
+
+exports[`test Note renders correctly 3`] = `
+<div
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}>
+  <div>
+    Note container
+  </div>
+</div>
+`;

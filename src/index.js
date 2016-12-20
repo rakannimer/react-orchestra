@@ -1,4 +1,5 @@
-import React from 'react'
+// require("babel-core/register");
+// require("babel-polyfill");
 
 import {
   Note,

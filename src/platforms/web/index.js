@@ -6,7 +6,7 @@ export default {
   Instrument,
   Note,
   Orchestra,
-}
+};
 
 export {
   Instrument,
