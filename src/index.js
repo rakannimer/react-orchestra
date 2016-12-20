@@ -1,3 +1,6 @@
+// require("babel-core/register");
+// require("babel-polyfill");
+
 import {
   Note,
   Instrument,
@@ -15,3 +18,16 @@ export {
   Note,
   Orchestra,
 };
+
+
+// class App extends React.Component {
+//   render() {
+//     return <div>
+//       <Note />
+//       <Instrument />
+//       <Orchestra />
+//       Orchestra web main
+//     </div>
+//   }
+// }
+// export default App;

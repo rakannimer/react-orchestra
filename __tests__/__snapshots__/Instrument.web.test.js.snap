@@ -1,0 +1,10 @@
+exports[`test Note renders correctly 1`] = `
+<div
+  style={undefined}>
+  <div>
+    <span>
+      Loading  Instrument 🚚 🚚 🚚
+    </span>
+  </div>
+</div>
+`;
