@@ -1,9 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import {
+  Note,
+  Instrument,
+  Orchestra,
+} from './platforms/web/';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+export default {
+  Instrument,
+  Note,
+  Orchestra,
+}
+
+export {
+  Instrument,
+  Note,
+  Orchestra,
+};
