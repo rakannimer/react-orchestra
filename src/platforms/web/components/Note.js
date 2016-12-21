@@ -43,20 +43,13 @@ class Note extends React.Component {
 
   }
   async stopPlayingNote() {
-    // if (this.props.interactive === false) return;
-    const fadeOutDuration = this.props.fadeOutDuration ? this.props.fadeOutDuration : 500;
-    await delay(fadeOutDuration);
-    try {
-      await stopPlayingNote(this.props.instrumentName, this.props.name);
-    } catch (err) {
-      console.warn('Something wrong happened with the audio api while stop playing note ');
-    }
-    this.setState({ isPlaying: false });
     if (this.playingBuffers && this.playingBuffers.length === 0) {
       return;
     }
     const buffer = this.playingBuffers.pop();
-    buffer.stop();
+    const fadeOutDuration = this.props.fadeOutDuration ? this.props.fadeOutDuration : 700;
+    await stopPlayingNote(buffer, fadeOutDuration);
+    this.setState({ isPlaying: false });
 
   }
   async componentWillReceiveProps(nextProps) {

@@ -47,8 +47,6 @@ const playSound = (noteBlob) => new Promise((resolve, reject) => {
         source.connect(audioContext.destination);
         source.start(0);
         resolve(source);
-        // await delay(fadeOutDuration);
-        // source.stop();
       },
       (err) => {
         reject(err);
@@ -61,22 +59,13 @@ const playNote = async (instrumentName, noteName) => {
   return await playSound(noteBlob);
 };
 
-const stopPlayingNote = (instrumentName, noteName) => {
-
-  // console.warn(`Stop playing note ${notePath}${JSON.stringify(Object.keys(playingNotes), 2, 2)}`);
-  // if (notePath in playingNotes) {
-  //   const noteSound = playingNotes[notePath];
-  //   try {
-  //     noteSound.stop();
-  //     noteSound.release();
-  //     delete playingNotes[notePath];
-  //   } catch (err) {
-  //     noteSound.stop();
-  //     console.warn(`ERROR PLAYING Cached NOTE ${err.message}`);
-  //   }
-  // } else {
-  //   console.warn('STOPPING NOTE THAT ISNT BEING PLAYED');
-  // }
+const stopPlayingNote = async (noteBuffer, fadeOutDuration = 700) => {
+  try {
+    await delay(fadeOutDuration);
+    noteBuffer.stop();
+  } catch (err) {
+    console.warn(`ERROR stopping note playback ${err.message}`);
+  }
 };
 
 const sharpToBemol = (noteName) => {
