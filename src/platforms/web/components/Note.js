@@ -63,9 +63,10 @@ class Note extends React.Component {
     }
   }
   onClickStart() {
-    if (!window.isTouchDevice) {
-      this.startPlayingNote();
+    if (window.isTouchDevice) {
+      return;
     }
+    this.startPlayingNote();
   }
   render() {
     return (

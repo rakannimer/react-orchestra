@@ -46,9 +46,9 @@ class StaticInstrumentExample extends React.Component {
           </Note>
           <Note name={'C3'} play={this.state.playC}><div>Another note</div></Note>
         </Instrument>
-        <div onClick={this.playMelody}>
+        <button onClick={this.playMelody}>
           Play melody
-        </div>
+        </button>
       </div>
     );
   }

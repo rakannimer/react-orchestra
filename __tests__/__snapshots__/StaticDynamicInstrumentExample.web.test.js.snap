@@ -34,10 +34,10 @@ exports[`test StaticInstrument demo renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div
+    <button
       onClick={[Function]}>
       Play melody
-    </div>
+    </button>
   </div>
   <div
     className="ro-instrument-loading"
@@ -54,9 +54,9 @@ exports[`test StaticInstrument demo renders correctly 1`] = `
       onTouchEnd={[Function]}
       onTouchStart={[Function]}>
       <div>
-        <div>
+        <button>
           Click me to play A3
-        </div>
+        </button>
       </div>
     </div>
     <div
@@ -65,9 +65,9 @@ exports[`test StaticInstrument demo renders correctly 1`] = `
       onMouseUp={[Function]}
       onTouchEnd={[Function]}
       onTouchStart={[Function]}>
-      <div>
+      <button>
         Click me to play C3
-      </div>
+      </button>
     </div>
   </div>
 </div>

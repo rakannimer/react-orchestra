@@ -20,10 +20,10 @@ class InteractiveInstrument extends React.Component {
       <Instrument name={'acoustic_grand_piano'} onStartPlaying={this.onStartPlaying} onStopPlaying={this.onStopPlaying} interactive>
         <Note name={'A3'}>
           <div>
-            <div>Click me to play A3</div>
+            <button>Click me to play A3</button>
           </div>
         </Note>
-        <Note name={'C3'}><div>Click me to play C3</div></Note>
+        <Note name={'C3'}><button>Click me to play C3</button></Note>
       </Instrument>
     );
   }
