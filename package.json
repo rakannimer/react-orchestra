@@ -49,6 +49,7 @@
     "jest": "^18.0.0",
     "nwb": "0.12.x",
     "react": "^15.4.1",
+    "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-test-renderer": "^15.4.1",
     "web-audio-test-api": "^0.5.2",
