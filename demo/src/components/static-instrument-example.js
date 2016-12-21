@@ -11,10 +11,14 @@ class StaticInstrumentExample extends React.Component {
       playC: false,
     };
     this.playMelody = this.playMelody.bind(this);
+    this.onInstrumentLoaded = this.onInstrumentLoaded.bind(this);
   }
   async componentDidMount() {
-    await delay(3000);
-    this.playMelody();
+    // await delay(3000);
+    // this.playMelody();
+  }
+  async onInstrumentLoaded() {
+    await this.playMelody();
   }
   async playMelody() {
     await delay(1000);
@@ -27,7 +31,7 @@ class StaticInstrumentExample extends React.Component {
   render() {
     return (
       <div>
-        <Instrument name={'acoustic_grand_piano'} interactive={false}>
+        <Instrument name={'acoustic_grand_piano'} interactive={false} onInstrumentLoaded={this.onInstrumentLoaded}>
           <Note name={'A3'} play={this.state.playA}>
             {/*
               You can put any react element here native or web.

@@ -38,6 +38,7 @@ class Instrument extends React.Component {
     const noteCount = this.props.children.length;
     if (noteCount === this.loadingNotesCounter) {
       this.setState({ isLoaded: true });
+      this.props.onInstrumentLoaded ? this.props.onInstrumentLoaded(noteName) : null;
     }
   }
 
