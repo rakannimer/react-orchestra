@@ -1,5 +1,9 @@
 # React Orchestra
 
+
+[![CircleCI](https://circleci.com/gh/RakanNimer/react-orchestra.svg?style=shield&circle-token=6fe92a6008747c5902e40a5038690d7e0118865d)](https://circleci.com/gh/RakanNimer/react-orchestra)
+
+
 A toolbox to build interactive and smart instruments on the web and mobile.
 
 ## Getting Started
