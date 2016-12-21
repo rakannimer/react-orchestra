@@ -26,7 +26,7 @@ exports[`test Note handles onMouseDown and onMouseUp correctly 2`] = `
 
 exports[`test Note handles onMouseDown and onMouseUp correctly 3`] = `
 <div
-  className=""
+  className="ro-note-playing"
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   onTouchEnd={[Function]}
@@ -65,7 +65,7 @@ exports[`test Note handles onTouchStart and onTouchEnd correctly 2`] = `
 
 exports[`test Note handles onTouchStart and onTouchEnd correctly 3`] = `
 <div
-  className=""
+  className="ro-note-playing"
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   onTouchEnd={[Function]}
