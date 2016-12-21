@@ -1,0 +1,10 @@
+body {
+  background-color: papayawhip;
+  color: #000;
+}
+.ro-note-playing {
+  background-color: yellow;
+}
+.ro-note-loading {
+  background-color: green;
+}

@@ -1,5 +1,6 @@
 exports[`test Note renders correctly 1`] = `
 <div
+  className="ro-instrument-loading"
   style={undefined}>
   <div>
     <span>

@@ -164,7 +164,7 @@ class App extends React.Component {
             <div>Click me to play A3</div>
           </div>
         </Note>
-        <Note name={'C3'}><div>Click me to play A3</div></Note>
+        <Note name={'C3'}><div>Click me to play C3</div></Note>
       </Instrument>
     );
   }

@@ -1,0 +1,74 @@
+exports[`test StaticInstrument demo renders correctly 1`] = `
+<div>
+  <div>
+    <div
+      className="ro-instrument-loading"
+      style={undefined}>
+      <div>
+        <span>
+          Loading  Instrument 🚚 🚚 🚚
+        </span>
+      </div>
+      <div
+        className=""
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}>
+        <div>
+           This is what I want my note to look like ! I can put anything in here.
+          <img
+            alt="Some pic"
+            src="https://s-media-cache-ak0.pinimg.com/originals/36/43/e7/3643e7e8dab9b88b3972ee1c9f909dea.jpg"
+            width="80" />
+        </div>
+      </div>
+      <div
+        className=""
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}>
+        <div>
+          Another note
+        </div>
+      </div>
+    </div>
+    <div
+      onClick={[Function]}>
+      Play melody
+    </div>
+  </div>
+  <div
+    className="ro-instrument-loading"
+    style={undefined}>
+    <div>
+      <span>
+        Loading  Instrument 🚚 🚚 🚚
+      </span>
+    </div>
+    <div
+      className=""
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}>
+      <div>
+        <div>
+          Click me to play A3
+        </div>
+      </div>
+    </div>
+    <div
+      className=""
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}>
+      <div>
+        Click me to play C3
+      </div>
+    </div>
+  </div>
+</div>
+`;

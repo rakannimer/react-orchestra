@@ -1,5 +1,5 @@
 import React from 'react';
-
+import classnames from 'classnames';
 import {
   stopPlayingNote,
   playNote,
@@ -18,6 +18,7 @@ class Note extends React.Component {
     };
     this.startPlayingNote = this.startPlayingNote.bind(this);
     this.stopPlayingNote = this.stopPlayingNote.bind(this);
+    this.onClickStart = this.onClickStart.bind(this);
   }
   async componentDidMount() {
     this.setState({ isLoaded: false });
@@ -31,6 +32,7 @@ class Note extends React.Component {
     this.props.onNoteLoaded ? this.props.onNoteLoaded(this.props.instrumentName, this.props.name) : null;
   }
   async startPlayingNote() {
+    // if (this.props.interactive === false) return;
     this.setState({ isPlaying: true });
     try {
       const buffer = await playNote(this.props.instrumentName, this.props.name);
@@ -40,11 +42,12 @@ class Note extends React.Component {
     }
 
   }
-  async stopPlayingNote(instrumentName, noteName) {
+  async stopPlayingNote() {
+    // if (this.props.interactive === false) return;
     const fadeOutDuration = this.props.fadeOutDuration ? this.props.fadeOutDuration : 500;
     await delay(fadeOutDuration);
     try {
-      await stopPlayingNote(instrumentName, noteName);
+      await stopPlayingNote(this.props.instrumentName, this.props.name);
     } catch (err) {
       console.warn('Something wrong happened with the audio api while stop playing note ');
     }
@@ -54,23 +57,46 @@ class Note extends React.Component {
     }
     const buffer = this.playingBuffers.pop();
     buffer.stop();
+
   }
-  componentWillReceiveProps(nextProps) {
+  async componentWillReceiveProps(nextProps) {
     if (!this.props.play && nextProps.play) {
-      console.log("Changed props to play");
+      await this.startPlayingNote();
+      console.log("Changed props to play, started playing note");
     }
     if (this.props.play && !nextProps.play) {
+      await this.stopPlayingNote();
       console.log("Changed props to stop playing");
+    }
+  }
+  onClickStart() {
+    if (!window.isTouchDevice) {
+      this.startPlayingNote();
     }
   }
   render() {
     return (
-      <div onMouseDown={this.startPlayingNote} onMouseUp={this.stopPlayingNote}>
+      <div
+        onTouchStart={this.startPlayingNote}
+        onTouchEnd={this.stopPlayingNote}
+        onMouseDown={this.onClickStart}
+        onMouseUp={this.stopPlayingNote}
+        className={
+          classnames({
+            'ro-note-playing':this.state.isPlaying,
+          }, {
+            'ro-note-loading': this.state.isLoading
+          })
+        }
+      >
         {
           this.props.children || <div />
         }
       </div>
     );
   }
+}
+Note.defaultProps = {
+  play: false
 }
 export default Note;

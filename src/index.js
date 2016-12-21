@@ -7,6 +7,7 @@ import {
   Orchestra,
 } from './platforms/web/';
 
+window.isTouchDevice = 'ontouchstart' in document.documentElement;
 export default {
   Instrument,
   Note,

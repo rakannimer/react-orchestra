@@ -21,7 +21,6 @@ const getSoundFromRemote = async (instrumentName, noteName) => {
 
 const getNoteBlob = async (instrumentName, noteName) => {
   const noteKey = generateNoteKey(instrumentName, noteName);
-  console.log(noteKey);
   const isNoteCached = await Store.exists(noteKey);
   if (isNoteCached) {
     const item = await Store.get(noteKey);

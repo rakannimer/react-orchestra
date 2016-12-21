@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import {
   instrumentAndNoteToLocalPath,
@@ -10,7 +11,6 @@ import {
   loadSound,
 } from '../MusicManager';
 
-// TODO: instremument props.name to note as a prop if it doesn't have instrumentName prop
 class Instrument extends React.Component {
   constructor(props) {
     super(props);
@@ -56,7 +56,12 @@ class Instrument extends React.Component {
     const isLoaded = this.state.isLoaded;
 
     return (
-      <div style={this.props.style}>
+      <div
+        style={this.props.style}
+        className={
+          classnames({'ro-instrument-loading':!this.state.isLoaded}, {'ro-instrument-loaded':this.state.isLoaded})
+        }
+      >
         { loader }
         {
           React.Children.map(this.props.children, child =>
@@ -66,6 +71,7 @@ class Instrument extends React.Component {
                 onStartPlaying: this.onStartPlaying,
                 onStopPlaying: this.onStopPlaying,
                 onNoteLoaded: this.onNoteLoaded,
+                interactive: this.props.interactive || false,
               },
             ),
           )
