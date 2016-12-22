@@ -1,6 +1,7 @@
 // import { noteNamesWithOctaves } from '../../constants/NOTE_NAMES';
 // import Sound from './Sound';
 import audioContext from './AudioContextSingleton';
+import MidiIO from '../../MidiIO/src/';
 import Store from './stores/';
 
 const baseURL = 'https://raw.githubusercontent.com/RakanNimer/midi-js-soundfonts/master/MusyngKite';
@@ -79,8 +80,16 @@ const sharpToBemol = (noteName) => {
   return noteName;
 };
 
+const midiURLToMetaAndTracks = async (midiURL) => {
+  // TODO : cache
+  const parsedMidi = await MidiIO.parseMidi(midiURL);
+  const { meta, tracks } = MidiIO.getTracksAndMetaFromParsedMidi(parsedMidi);
+  return { meta, tracks };
+};
 
 export {
+  generateNoteKey,
+  midiURLToMetaAndTracks,
   playSound,
   playNote,
   sharpToBemol,
@@ -89,4 +98,5 @@ export {
   getNoteBlob,
   getSoundFromRemote,
   loadSound,
+  delay,
 };

@@ -70,5 +70,8 @@ exports[`test StaticInstrument demo renders correctly 1`] = `
       </button>
     </div>
   </div>
+  <div>
+    orchestra
+  </div>
 </div>
 `;

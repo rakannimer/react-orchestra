@@ -1,6 +1,7 @@
 const callIfExists = (fnc, ...args) => {
   if (fnc) {
-    fnc(...args);
+    return fnc(...args);
   }
+  return null;
 };
 export default callIfExists;

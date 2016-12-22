@@ -6,6 +6,7 @@ import './index.css';
 // import { Instrument, Orchestra, Note } from '../../src';
 import StaticInstrumentExample from './components/static-instrument-example';
 import InteractiveInstrumentExample from './components/interactive-instrument-example';
+import StaticOrchestraExample from './components/static-orchestra-example';
 
 class Demo extends React.Component {
   render() {
@@ -22,6 +23,12 @@ class Demo extends React.Component {
           </h3>
           <div>
             <InteractiveInstrumentExample />
+          </div>
+          <h3>
+            An orchestra that plays a midi file and syncs ui
+          </h3>
+          <div>
+            <StaticOrchestraExample />
           </div>
         </div>
       </div>
