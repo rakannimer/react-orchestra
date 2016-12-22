@@ -1,12 +1,13 @@
-import React from 'react'
-import {render} from 'react-dom'
-import './index.css';
+import React from 'react';
+//eslint-disable-next-line
+import { render } from 'react-dom';
 
-import { Instrument, Orchestra, Note } from '../../src'
+import './index.css';
+// import { Instrument, Orchestra, Note } from '../../src';
 import StaticInstrumentExample from './components/static-instrument-example';
 import InteractiveInstrumentExample from './components/interactive-instrument-example';
 
-let Demo = React.createClass({
+class Demo extends React.Component {
   render() {
     return (
       <div>
@@ -16,7 +17,9 @@ let Demo = React.createClass({
           <div>
             <StaticInstrumentExample />
           </div>
-          <h3>An interactive instrument that can listens to touch and tap events, plays and syncs ui</h3>
+          <h3>
+            An interactive instrument that can listens to touch and tap events, plays and syncs ui
+          </h3>
           <div>
             <InteractiveInstrumentExample />
           </div>
@@ -24,6 +27,6 @@ let Demo = React.createClass({
       </div>
     );
   }
-})
+}
 
-render(<Demo/>, document.querySelector('#demo'))
+render(<Demo />, document.querySelector('#demo'));

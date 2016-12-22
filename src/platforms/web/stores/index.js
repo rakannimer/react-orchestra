@@ -1,4 +1,5 @@
 import localforage from 'localforage';
+
 const store = {
   init() {
     localforage.config({
@@ -37,7 +38,7 @@ const store = {
       console.warn(`Error : ${JSON.stringify(err.message, 2, 2)}`);
       return false;
     }
-  }
+  },
 };
 
 store.init();

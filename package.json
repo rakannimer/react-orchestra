@@ -15,13 +15,14 @@
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && npm clean-demo",
     "start": "nwb serve-react-demo",
-    "test": "jest",
+    "test": "./node_modules/.bin/eslint src/* && ./node_modules/.bin/eslint demo/* && jest",
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server",
     "test:jest": "jest"
   },
   "dependencies": {
     "babel": "^6.5.2",
+    "babel-eslint": "^7.1.1",
     "babel-polyfill": "^6.20.0",
     "bluebird": "^3.4.6",
     "classnames": "^2.2.5",

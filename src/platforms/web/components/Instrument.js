@@ -1,15 +1,14 @@
 import React from 'react';
 import classnames from 'classnames';
-
-import {
-  instrumentAndNoteToLocalPath,
-  loadInstrument,
-  stopPlayingNote,
-  playSound,
-  getNoteBlob,
-  playNote,
-  loadSound,
-} from '../MusicManager';
+// import {
+//   loadInstrument,
+//   stopPlayingNote,
+//   playSound,
+//   getNoteBlob,
+//   playNote,
+//   loadSound,
+// } from '../MusicManager';
+import callIfExists from '../../../utils/callIfExists';
 
 class Instrument extends React.Component {
   constructor(props) {
@@ -22,45 +21,30 @@ class Instrument extends React.Component {
       isLoaded: false,
     };
   }
-  async componentDidMount() {
-    // Testing
-    const instrumentName = 'acoustic_grand_piano';
-    this.playChord(instrumentName);
-  }
   async onStartPlaying(noteName) {
-    this.props.onStartPlaying ? this.props.onStartPlaying(noteName) : null;
+    callIfExists(this.props.onStartPlaying, noteName);
   }
   async onStopPlaying(noteName) {
-    this.props.onStopPlaying ? this.props.onStopPlaying(noteName) : null;
+    callIfExists(this.props.onStopPlaying, noteName);
   }
   async onNoteLoaded(instrumentName, noteName) {
     this.loadingNotesCounter += 1;
     const noteCount = this.props.children.length;
     if (noteCount === this.loadingNotesCounter) {
       this.setState({ isLoaded: true });
-      this.props.onInstrumentLoaded ? this.props.onInstrumentLoaded(noteName) : null;
+      callIfExists(this.props.onInstrumentLoaded, this.props.name, noteName);
     }
   }
-
-  async playChord(instrumentName) {
-    const noteName = 'C4';
-    const noteName2 = 'E4';
-    const noteName3 = 'G4';
-    await playNote(instrumentName, noteName);
-    await playNote(instrumentName, noteName2);
-    await playNote(instrumentName, noteName3);
-  }
   render() {
+    // Because I can !
     const loader = this.state.isLoaded ?
       null :
       this.props.loader ? this.props.loader : <div><span>Loading  Instrument 🚚 🚚 🚚</span></div>;
-    const isLoaded = this.state.isLoaded;
-
     return (
       <div
         style={this.props.style}
         className={
-          classnames({'ro-instrument-loading':!this.state.isLoaded}, {'ro-instrument-loaded':this.state.isLoaded})
+          classnames({ 'ro-instrument-loading': !this.state.isLoaded }, { 'ro-instrument-loaded': this.state.isLoaded })
         }
       >
         { loader }
@@ -72,7 +56,7 @@ class Instrument extends React.Component {
                 onStartPlaying: this.onStartPlaying,
                 onStopPlaying: this.onStopPlaying,
                 onNoteLoaded: this.onNoteLoaded,
-                interactive: this.props.interactive || false,
+                interactive: this.props.interactive || true,
               },
             ),
           )

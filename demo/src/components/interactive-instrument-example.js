@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instrument, Note } from '../../../src';;
+import { Instrument, Note } from '../../../src';
 
 class InteractiveInstrument extends React.Component {
   constructor(props) {
@@ -9,9 +9,11 @@ class InteractiveInstrument extends React.Component {
     this.onStartPlaying.bind(this);
     this.onStopPlaying.bind(this);
   }
+  // eslint-disable-next-line class-methods-use-this
   onStartPlaying(noteName) {
     console.warn(`Note played ${noteName}. Use this function if you want to sync your state with the instrument, dispatch redux action or alter mobx observable or just setting state inside your component`);
   }
+  // eslint-disable-next-line class-methods-use-this
   onStopPlaying(noteName) {
     console.warn(`Stopped playing ${noteName}. Use this function if you want to sync your state with the instrument, dispatch redux action or alter mobx observable or just setting state inside your component`);
   }

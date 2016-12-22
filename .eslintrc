@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "env": {                                                                          
+  "env": {
     "browser": true,
     "node": true,
     "jest": true,
@@ -12,5 +12,7 @@
     "no-bitwise": "off",
     "react/prop-types": "off",
     "react/prefer-stateless-function": "off",
+    "react/no-did-mount-set-state": "off",
+    "no-nested-ternary": "off"
   }
 }

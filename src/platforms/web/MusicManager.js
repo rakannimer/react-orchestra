@@ -1,10 +1,10 @@
-import { noteNamesWithOctaves } from '../../constants/NOTE_NAMES';
-import Sound from './Sound';
+// import { noteNamesWithOctaves } from '../../constants/NOTE_NAMES';
+// import Sound from './Sound';
 import audioContext from './AudioContextSingleton';
 import Store from './stores/';
 
 const baseURL = 'https://raw.githubusercontent.com/RakanNimer/midi-js-soundfonts/master/MusyngKite';
-const playingNotes = {};
+// const playingNotes = {};
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const instrumentNameToRemotePath = instrumentName => `${baseURL}/${instrumentName}-mp3`;
@@ -31,11 +31,11 @@ const getNoteBlob = async (instrumentName, noteName) => {
 };
 
 const loadSound = async (instrumentName, noteName) => {
-  const noteBlob = await getNoteBlob(instrumentName, noteName)
+  const noteBlob = await getNoteBlob(instrumentName, noteName);
   return noteBlob;
 };
 
-const playSound = (noteBlob) => new Promise((resolve, reject) => {
+const playSound = noteBlob => new Promise((resolve, reject) => {
   audioContext.decodeAudioData(
       noteBlob,
       async (buffer) => {

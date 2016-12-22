@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instrument, Orchestra, Note } from '../../../src';
+import { Instrument, Note } from '../../../src';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -12,10 +12,6 @@ class StaticInstrumentExample extends React.Component {
     };
     this.playMelody = this.playMelody.bind(this);
     this.onInstrumentLoaded = this.onInstrumentLoaded.bind(this);
-  }
-  async componentDidMount() {
-    // await delay(3000);
-    // this.playMelody();
   }
   async onInstrumentLoaded() {
     await this.playMelody();

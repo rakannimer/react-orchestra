@@ -5,8 +5,7 @@ import {
   playNote,
   loadSound,
 } from '../MusicManager';
-
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+import callIfExists from '../../../utils/callIfExists';
 
 class Note extends React.Component {
   constructor(props) {
@@ -28,8 +27,23 @@ class Note extends React.Component {
       return;
     }
     this.setState({ isLoaded: true });
-    //eslint-disable-next-line
-    this.props.onNoteLoaded ? this.props.onNoteLoaded(this.props.instrumentName, this.props.name) : null;
+    callIfExists(this.props.onNoteLoaded, this.props.instrumentName, this.props.name);
+  }
+  async componentWillReceiveProps(nextProps) {
+    if (!this.props.play && nextProps.play) {
+      await this.startPlayingNote();
+      console.log('Changed props to play, started playing note');
+    }
+    if (this.props.play && !nextProps.play) {
+      await this.stopPlayingNote();
+      console.log('Changed props to stop playing');
+    }
+  }
+  onClickStart() {
+    if (window.isTouchDevice) {
+      return;
+    }
+    this.startPlayingNote();
   }
   async startPlayingNote() {
     // if (this.props.interactive === false) return;
@@ -40,7 +54,6 @@ class Note extends React.Component {
     } catch (err) {
       console.warn('Something wrong happened with the audio api while playing note ');
     }
-
   }
   async stopPlayingNote() {
     if (this.playingBuffers && this.playingBuffers.length === 0) {
@@ -50,23 +63,6 @@ class Note extends React.Component {
     const fadeOutDuration = this.props.fadeOutDuration ? this.props.fadeOutDuration : 700;
     await stopPlayingNote(buffer, fadeOutDuration);
     this.setState({ isPlaying: false });
-
-  }
-  async componentWillReceiveProps(nextProps) {
-    if (!this.props.play && nextProps.play) {
-      await this.startPlayingNote();
-      console.log("Changed props to play, started playing note");
-    }
-    if (this.props.play && !nextProps.play) {
-      await this.stopPlayingNote();
-      console.log("Changed props to stop playing");
-    }
-  }
-  onClickStart() {
-    if (window.isTouchDevice) {
-      return;
-    }
-    this.startPlayingNote();
   }
   render() {
     return (
@@ -77,9 +73,9 @@ class Note extends React.Component {
         onMouseUp={this.stopPlayingNote}
         className={
           classnames({
-            'ro-note-playing':this.state.isPlaying,
+            'ro-note-playing': this.state.isPlaying,
           }, {
-            'ro-note-loading': this.state.isLoading
+            'ro-note-loading': this.state.isLoading,
           })
         }
       >
@@ -91,6 +87,6 @@ class Note extends React.Component {
   }
 }
 Note.defaultProps = {
-  play: false
-}
+  play: false,
+};
 export default Note;
