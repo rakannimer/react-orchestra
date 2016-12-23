@@ -224,7 +224,7 @@ class App extends Component {
         onMidiLoaded={this.onMidiLoaded}
         onInstrumentsReady={this.onInstrumentsReady}
         play={this.state.playSong}
-        selectedTracks={tracks => tracks}
+        selectedTracks={[0, 1]}
         onNotePlayed={this.onNotePlayed}
       >
         <div> This is an orchestra it can play complex melodies ! </div>
