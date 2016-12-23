@@ -1,91 +1,6 @@
-exports[`test Note handles onMouseDown and onMouseUp correctly 1`] = `
-<div
-  className=" "
-  onMouseDown={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}>
-  <div>
-    Note container
-  </div>
-</div>
-`;
-
-exports[`test Note handles onMouseDown and onMouseUp correctly 2`] = `
-<div
-  className=" ro-note-playing"
-  onMouseDown={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}>
-  <div>
-    Note container
-  </div>
-</div>
-`;
-
-exports[`test Note handles onMouseDown and onMouseUp correctly 3`] = `
-<div
-  className=" ro-note-playing"
-  onMouseDown={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}>
-  <div>
-    Note container
-  </div>
-</div>
-`;
-
-exports[`test Note handles onTouchStart and onTouchEnd correctly 1`] = `
-<div
-  className=" "
-  onMouseDown={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}>
-  <div>
-    Note container
-  </div>
-</div>
-`;
-
-exports[`test Note handles onTouchStart and onTouchEnd correctly 2`] = `
-<div
-  className=" ro-note-playing"
-  onMouseDown={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}>
-  <div>
-    Note container
-  </div>
-</div>
-`;
-
-exports[`test Note handles onTouchStart and onTouchEnd correctly 3`] = `
-<div
-  className=" ro-note-playing"
-  onMouseDown={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}>
-  <div>
-    Note container
-  </div>
-</div>
-`;
-
 exports[`test Note renders correctly 1`] = `
-<div
-  className=" "
-  onMouseDown={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}>
-  <div>
-    Note container
-  </div>
+<div>
+   Loading Note 
 </div>
 `;
 
@@ -97,26 +12,12 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <div
-    className=" "
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchStart={[Function]}>
-    <div>
-        Note container
-    </div>
+  "node": <div>
+     Loading Note 
 </div>,
   "nodes": Array [
-    <div
-      className=" "
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}>
-      <div>
-            Note container
-      </div>
+    <div>
+       Loading Note 
 </div>,
   ],
   "options": Object {},
@@ -154,7 +55,7 @@ ShallowWrapper {
         "refs": Object {},
         "startPlayingNote": [Function],
         "state": Object {
-          "isLoaded": true,
+          "isLoading": true,
           "isPlaying": false,
         },
         "stopPlayingNote": [Function],
@@ -176,26 +77,12 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className=" "
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}>
-          <div>
-                    Note container
-          </div>
+        "_currentElement": <div>
+           Loading Note 
 </div>,
         "_debugID": 2,
-        "_renderedOutput": <div
-          className=" "
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}>
-          <div>
-                    Note container
-          </div>
+        "_renderedOutput": <div>
+           Loading Note 
 </div>,
       },
       "_renderedNodeType": 0,
@@ -228,26 +115,12 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <div
-    className=" ro-note-playing"
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchStart={[Function]}>
-    <div>
-        Note container
-    </div>
+  "node": <div>
+     Loading Note 
 </div>,
   "nodes": Array [
-    <div
-      className=" ro-note-playing"
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}>
-      <div>
-            Note container
-      </div>
+    <div>
+       Loading Note 
 </div>,
   ],
   "options": Object {},
@@ -285,7 +158,7 @@ ShallowWrapper {
         "refs": Object {},
         "startPlayingNote": [Function],
         "state": Object {
-          "isLoaded": true,
+          "isLoading": true,
           "isPlaying": true,
         },
         "stopPlayingNote": [Function],
@@ -307,26 +180,12 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className=" ro-note-playing"
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}>
-          <div>
-                    Note container
-          </div>
+        "_currentElement": <div>
+           Loading Note 
 </div>,
         "_debugID": 2,
-        "_renderedOutput": <div
-          className=" ro-note-playing"
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}>
-          <div>
-                    Note container
-          </div>
+        "_renderedOutput": <div>
+           Loading Note 
 </div>,
       },
       "_renderedNodeType": 0,

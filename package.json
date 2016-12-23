@@ -18,7 +18,9 @@
     "test": "./node_modules/.bin/eslint src/platforms/* && ./node_modules/.bin/eslint src/utils/* && ./node_modules/.bin/eslint src/*.js && ./node_modules/.bin/eslint demo/* && jest",
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server",
-    "test:jest": "jest"
+    "test:jest": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "babel": "^6.5.2",
@@ -38,6 +40,9 @@
     "react": "15.x"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-addon-notes": "^1.0.1",
     "animate.css": "^3.5.2",
     "babel-jest": "^18.0.0",
     "babel-plugin-transform-async-to-generator": "^6.16.0",

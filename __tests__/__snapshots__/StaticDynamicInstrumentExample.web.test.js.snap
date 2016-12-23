@@ -9,37 +9,11 @@ exports[`test StaticInstrument demo renders correctly 1`] = `
           Loading  Instrument 🚚 🚚 🚚
         </span>
       </div>
-      <div
-        className=" "
-        onMouseDown={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}>
-        <p
-          className="control">
-          <a
-            className="button ">
-            This is what I want my note to look like ! I can put anything in here.
-            <img
-              alt="Some pic"
-              src="https://s-media-cache-ak0.pinimg.com/originals/36/43/e7/3643e7e8dab9b88b3972ee1c9f909dea.jpg"
-              width="30" />
-          </a>
-        </p>
+      <div>
+         Loading Note 
       </div>
-      <div
-        className=" "
-        onMouseDown={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}>
-        <p
-          className="control">
-          <div
-            className="button ">
-            Another note
-          </div>
-        </p>
+      <div>
+         Loading Note 
       </div>
     </div>
     <div
@@ -59,33 +33,11 @@ exports[`test StaticInstrument demo renders correctly 1`] = `
         Loading  Instrument 🚚 🚚 🚚
       </span>
     </div>
-    <div
-      className="animated bounce "
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}>
-      <p
-        className="control">
-        <div
-          className="button ">
-          Click me to play A3
-        </div>
-      </p>
+    <div>
+       Loading Note 
     </div>
-    <div
-      className=" "
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}>
-      <div
-        className="control">
-        <button
-          className="button ">
-          Click me to play C3
-        </button>
-      </div>
+    <div>
+       Loading Note 
     </div>
   </div>
   <div>

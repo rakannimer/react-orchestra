@@ -14,23 +14,22 @@ class Note extends React.Component {
     this.playingBuffers = [];
     this.state = {
       isPlaying: false,
-      isLoaded: true,
+      isLoading: true,
     };
     this.startPlayingNote = this.startPlayingNote.bind(this);
     this.stopPlayingNote = this.stopPlayingNote.bind(this);
     this.onClickStart = this.onClickStart.bind(this);
   }
   async componentDidMount() {
-    this.setState({ isLoaded: false });
-    try {
-      await loadSound(this.props.instrumentName, this.props.name);
-    } catch (err) {
-      return;
-    }
-    this.setState({ isLoaded: true });
-    callIfExists(this.props.onNoteLoaded, this.props.instrumentName, this.props.name);
+    await this.loadSound();
   }
   async componentWillReceiveProps(nextProps) {
+    if (
+      (nextProps.instrumentName !== this.props.instrumentName) ||
+      (nextProps.name !== this.props.name)
+    ) {
+      await this.loadSound();
+    }
     if (!this.props.play && nextProps.play) {
       await this.startPlayingNote();
       // console.log('Changed props to play, started playing note');
@@ -45,6 +44,17 @@ class Note extends React.Component {
       return;
     }
     this.startPlayingNote();
+  }
+  async loadSound() {
+    this.setState({ isLoading: true });
+    try {
+      await loadSound(this.props.instrumentName, this.props.name);
+    } catch (err) {
+      this.setState({ isLoading: false });
+      return;
+    }
+    this.setState({ isLoading: false });
+    callIfExists(this.props.onNoteLoaded, this.props.instrumentName, this.props.name);
   }
   async startPlayingNote() {
     // if (this.props.interactive === false) return;
@@ -66,6 +76,10 @@ class Note extends React.Component {
     this.setState({ isPlaying: false });
   }
   render() {
+    if (this.state.isLoading) {
+      // console.log(isDefined(this.props.loader, '<div> Loading Note </div>'))
+      return isDefined(this.props.loader, <div> Loading Note </div>);
+    }
     return (
       <div
         onTouchStart={this.startPlayingNote}
