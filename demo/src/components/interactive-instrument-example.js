@@ -20,12 +20,20 @@ class InteractiveInstrument extends React.Component {
   render() {
     return (
       <Instrument name={'acoustic_grand_piano'} onStartPlaying={this.onStartPlaying} onStopPlaying={this.onStopPlaying} interactive>
-        <Note name={'A3'}>
-          <div>
-            <button>Click me to play A3</button>
+        <Note name={'A3'} className={'animated bounce'}>
+          <p className="control">
+            <div className={`button ${this.state.playA ? 'is-primary' : ''}`}>
+              Click me to play A3
+            </div>
+          </p>
+        </Note>
+        <Note name={'C3'}>
+          <div className="control">
+            <button className={`button ${this.state.playC ? 'is-primary' : ''}`}>
+              Click me to play C3
+            </button>
           </div>
         </Note>
-        <Note name={'C3'}><button>Click me to play C3</button></Note>
       </Instrument>
     );
   }

@@ -6,6 +6,7 @@ import {
   loadSound,
 } from '../MusicManager';
 import callIfExists from '../../../utils/callIfExists';
+import isDefined from '../../../utils/isDefined';
 
 class Note extends React.Component {
   constructor(props) {
@@ -32,11 +33,11 @@ class Note extends React.Component {
   async componentWillReceiveProps(nextProps) {
     if (!this.props.play && nextProps.play) {
       await this.startPlayingNote();
-      console.log('Changed props to play, started playing note');
+      // console.log('Changed props to play, started playing note');
     }
     if (this.props.play && !nextProps.play) {
       await this.stopPlayingNote();
-      console.log('Changed props to stop playing');
+      // console.log('Changed props to stop playing');
     }
   }
   onClickStart() {
@@ -72,11 +73,11 @@ class Note extends React.Component {
         onMouseDown={this.onClickStart}
         onMouseUp={this.stopPlayingNote}
         className={
-          classnames({
+          `${isDefined(this.props.className, '')} ${classnames({
             'ro-note-playing': this.state.isPlaying,
           }, {
             'ro-note-loading': this.state.isLoading,
-          })
+          })}`
         }
       >
         {

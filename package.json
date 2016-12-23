@@ -25,6 +25,7 @@
     "babel-eslint": "^7.1.1",
     "babel-polyfill": "^6.20.0",
     "bluebird": "^3.4.6",
+    "bulma": "^0.2.3",
     "classnames": "^2.2.5",
     "localforage": "^1.4.3",
     "lodash": "^4.17.2",
@@ -37,6 +38,7 @@
     "react": "15.x"
   },
   "devDependencies": {
+    "animate.css": "^3.5.2",
     "babel-jest": "^18.0.0",
     "babel-plugin-transform-async-to-generator": "^6.16.0",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
@@ -52,6 +54,7 @@
     "file-loader": "^0.9.0",
     "jest": "^18.0.0",
     "nwb": "0.12.x",
+    "randomcolor": "^0.4.4",
     "react": "^15.4.1",
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.4.1",

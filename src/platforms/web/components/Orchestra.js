@@ -6,6 +6,7 @@ import {
 } from '../MusicManager';
 
 import isDefined from '../../../utils/isDefined';
+import callIfExists from '../../../utils/callIfExists';
 
 const parseMidi = async (props) => {
   const midiURL = isDefined(props.midiURL, '');
@@ -23,18 +24,28 @@ class Orchestra extends React.Component {
   constructor(props) {
     super(props);
     this.state = defaultState;
+    this.onNotePlayed = this.onNotePlayed.bind(this);
+    this.onNoteStopPlaying = this.onNoteStopPlaying.bind(this);
   }
   async componentDidMount() {
     const newState = await parseMidi(this.props);
     this.setState(newState);
   }
+  onNotePlayed(instrumentName, noteName) {
+    callIfExists(this.props.onNotePlayed, instrumentName, noteName);
+  }
+  onNoteStopPlaying(instrumentName, noteName) {
+    callIfExists(this.props.onNoteStopPlaying, instrumentName, noteName);
+  }
   render() {
     return (
       <div>
-        orchestra
+        { this.props.children }
         {
           this.state.tracks.map((track, i) => (
             <MidiTrack
+              onNotePlayed={this.onNotePlayed}
+              onNoteStopPlaying={this.onNoteStopPlaying}
               notes={track}
               meta={this.state.meta}
               trackIndex={i}

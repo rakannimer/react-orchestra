@@ -1,6 +1,6 @@
 exports[`test Note handles onMouseDown and onMouseUp correctly 1`] = `
 <div
-  className=""
+  className=" "
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   onTouchEnd={[Function]}
@@ -13,7 +13,7 @@ exports[`test Note handles onMouseDown and onMouseUp correctly 1`] = `
 
 exports[`test Note handles onMouseDown and onMouseUp correctly 2`] = `
 <div
-  className="ro-note-playing"
+  className=" ro-note-playing"
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   onTouchEnd={[Function]}
@@ -26,7 +26,7 @@ exports[`test Note handles onMouseDown and onMouseUp correctly 2`] = `
 
 exports[`test Note handles onMouseDown and onMouseUp correctly 3`] = `
 <div
-  className="ro-note-playing"
+  className=" ro-note-playing"
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   onTouchEnd={[Function]}
@@ -39,7 +39,7 @@ exports[`test Note handles onMouseDown and onMouseUp correctly 3`] = `
 
 exports[`test Note handles onTouchStart and onTouchEnd correctly 1`] = `
 <div
-  className=""
+  className=" "
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   onTouchEnd={[Function]}
@@ -52,7 +52,7 @@ exports[`test Note handles onTouchStart and onTouchEnd correctly 1`] = `
 
 exports[`test Note handles onTouchStart and onTouchEnd correctly 2`] = `
 <div
-  className="ro-note-playing"
+  className=" ro-note-playing"
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   onTouchEnd={[Function]}
@@ -65,7 +65,7 @@ exports[`test Note handles onTouchStart and onTouchEnd correctly 2`] = `
 
 exports[`test Note handles onTouchStart and onTouchEnd correctly 3`] = `
 <div
-  className="ro-note-playing"
+  className=" ro-note-playing"
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   onTouchEnd={[Function]}
@@ -78,7 +78,7 @@ exports[`test Note handles onTouchStart and onTouchEnd correctly 3`] = `
 
 exports[`test Note renders correctly 1`] = `
 <div
-  className=""
+  className=" "
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   onTouchEnd={[Function]}
@@ -98,7 +98,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
-    className=""
+    className=" "
     onMouseDown={[Function]}
     onMouseUp={[Function]}
     onTouchEnd={[Function]}
@@ -109,7 +109,7 @@ ShallowWrapper {
 </div>,
   "nodes": Array [
     <div
-      className=""
+      className=" "
       onMouseDown={[Function]}
       onMouseUp={[Function]}
       onTouchEnd={[Function]}
@@ -177,7 +177,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
-          className=""
+          className=" "
           onMouseDown={[Function]}
           onMouseUp={[Function]}
           onTouchEnd={[Function]}
@@ -188,7 +188,7 @@ ShallowWrapper {
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
-          className=""
+          className=" "
           onMouseDown={[Function]}
           onMouseUp={[Function]}
           onTouchEnd={[Function]}
@@ -229,7 +229,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
-    className="ro-note-playing"
+    className=" ro-note-playing"
     onMouseDown={[Function]}
     onMouseUp={[Function]}
     onTouchEnd={[Function]}
@@ -240,7 +240,7 @@ ShallowWrapper {
 </div>,
   "nodes": Array [
     <div
-      className="ro-note-playing"
+      className=" ro-note-playing"
       onMouseDown={[Function]}
       onMouseUp={[Function]}
       onTouchEnd={[Function]}
@@ -308,7 +308,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
-          className="ro-note-playing"
+          className=" ro-note-playing"
           onMouseDown={[Function]}
           onMouseUp={[Function]}
           onTouchEnd={[Function]}
@@ -319,7 +319,7 @@ ShallowWrapper {
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
-          className="ro-note-playing"
+          className=" ro-note-playing"
           onMouseDown={[Function]}
           onMouseUp={[Function]}
           onTouchEnd={[Function]}

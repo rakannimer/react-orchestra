@@ -10,9 +10,7 @@ import {
 import callIfExists from '../../../utils/callIfExists';
 import isDefined from '../../../utils/isDefined';
 
-const waitAndRun = (fnc, waitTime, ...args) => {
-  setTimeout(fnc.bind(...args), waitTime);
-};
+const waitAndRun = (fnc, waitTime, ...args) => setTimeout(fnc.bind(...args), waitTime);
 
 export default class MidiTrack extends React.Component {
   constructor(props) {
@@ -22,10 +20,18 @@ export default class MidiTrack extends React.Component {
       playingNotes: {},
     };
     this.onTimerCall = this.onTimerCall.bind(this);
+    this.noteTimers = [];
   }
-  async componentDidMount() {
+  componentDidMount() {
     if (this.props.play) {
       this.playTrack();
+    }
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.play && !this.props.play) {
+      this.playTrack();
+    } else if (!nextProps.play && this.props.play) {
+      this.stopPlayingTrack();
     }
   }
   async onTimerCall(note) {
@@ -37,19 +43,27 @@ export default class MidiTrack extends React.Component {
         [key]: true,
       },
     });
+    callIfExists(this.props.onNotePlayed, instrumentName, noteName);
     await delay(durationInMS);
     this.setState({
       playingNotes: {
         [key]: false,
       },
     });
+    callIfExists(this.props.onNoteStopPlaying, instrumentName, noteName);
   }
   async playTrack() {
     const notes = this.props.notes;
     for (let i = 0; i < notes.length; i += 1) {
       const currentNote = notes[i];
       const { startTimeInMS } = currentNote;
-      waitAndRun(this.onTimerCall, startTimeInMS, this, currentNote);
+      const noteTimer = waitAndRun(this.onTimerCall, startTimeInMS, this, currentNote);
+      this.noteTimers.push(noteTimer);
+    }
+  }
+  stopPlayingTrack() {
+    for (let i = 0; i < this.noteTimers.length; i += 1) {
+      clearTimeout(this.noteTimers[i]);
     }
   }
   render() {

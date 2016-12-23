@@ -10,34 +10,46 @@ exports[`test StaticInstrument demo renders correctly 1`] = `
         </span>
       </div>
       <div
-        className=""
+        className=" "
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
         onTouchStart={[Function]}>
-        <div>
-           This is what I want my note to look like ! I can put anything in here.
-          <img
-            alt="Some pic"
-            src="https://s-media-cache-ak0.pinimg.com/originals/36/43/e7/3643e7e8dab9b88b3972ee1c9f909dea.jpg"
-            width="80" />
-        </div>
+        <p
+          className="control">
+          <a
+            className="button ">
+            This is what I want my note to look like ! I can put anything in here.
+            <img
+              alt="Some pic"
+              src="https://s-media-cache-ak0.pinimg.com/originals/36/43/e7/3643e7e8dab9b88b3972ee1c9f909dea.jpg"
+              width="30" />
+          </a>
+        </p>
       </div>
       <div
-        className=""
+        className=" "
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
         onTouchStart={[Function]}>
-        <div>
-          Another note
-        </div>
+        <p
+          className="control">
+          <div
+            className="button ">
+            Another note
+          </div>
+        </p>
       </div>
     </div>
-    <button
-      onClick={[Function]}>
-      Play melody
-    </button>
+    <div
+      className="control">
+      <button
+        className="button"
+        onClick={[Function]}>
+        Play Melody
+      </button>
+    </div>
   </div>
   <div
     className="ro-instrument-loading"
@@ -48,30 +60,48 @@ exports[`test StaticInstrument demo renders correctly 1`] = `
       </span>
     </div>
     <div
-      className=""
+      className="animated bounce "
       onMouseDown={[Function]}
       onMouseUp={[Function]}
       onTouchEnd={[Function]}
       onTouchStart={[Function]}>
-      <div>
-        <button>
+      <p
+        className="control">
+        <div
+          className="button ">
           Click me to play A3
+        </div>
+      </p>
+    </div>
+    <div
+      className=" "
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}>
+      <div
+        className="control">
+        <button
+          className="button ">
+          Click me to play C3
         </button>
       </div>
     </div>
-    <div
-      className=""
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}>
-      <button>
-        Click me to play C3
-      </button>
-    </div>
   </div>
   <div>
-    orchestra
+    <div>
+      <div>
+         This is an orchestra it can play complex melodies ! 
+      </div>
+    </div>
+    <div
+      className="control">
+      <button
+        className="button "
+        onClick={[Function]}>
+        Toggle playback
+      </button>
+    </div>
   </div>
 </div>
 `;
