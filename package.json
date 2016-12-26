@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/RakanNimer/react-orchestra#readme",
   "dependencies": {
+    "base-64": "^0.1.0",
     "classnames": "^2.2.5",
     "midi-file-parser": "^1.0.0"
   },
