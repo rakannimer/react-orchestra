@@ -1,6 +1,5 @@
 # React Orchestra
 
-
 [![CircleCI](https://circleci.com/gh/RakanNimer/react-orchestra.svg?style=shield&circle-token=6fe92a6008747c5902e40a5038690d7e0118865d)](https://circleci.com/gh/RakanNimer/react-orchestra)
 
 
@@ -88,13 +87,32 @@ yarn add react-orchestra || { npm i -S react-orchestra; }
 
 ## API + Examples
 
-Let's build a couple of use-cases to get familiar with the API.
+Let's build a couple of use-cases to get familiar with the API. 
+Or you can directly check out and run the examples : 
+
+- Web example : 
+```sh
+git clone git@github.com:RakanNimer/react-orchestra.git
+cd  react-orchestra/web/
+{yarn && yarn start} || {npm i && npm start}
+```
+
+- Native example : 
+```sh
+git clone git@github.com:RakanNimer/react-orchestra.git
+cd  react-orchestra/ReactOrchestraNativeDemo/
+yarn || {npm i;}
+npm run init-app
+react-native run-ios # or run-android
+```
 
 **1. A non-interactive instrument that can play notes and sync ui.**
 
 ```javascript
 import React from 'react';
 import { Instrument, Note } from 'react-orchestra';
+// If you're using react-native then it's : 
+// import { Instrument, Note } from 'react-orchestra/native';
 
 const delay = ms => new Promise(resolve => setTimeout(ms, resolve));
 
@@ -152,6 +170,8 @@ Let's build an instrument that the user can play by clicking or tapping on notes
 ```javascript
 import React from 'react';
 import { Instrument, Note } from 'react-orchestra';
+// If you're using react-native then it's : 
+// import { Instrument, Note } from 'react-orchestra/native';
 
 class App extends React.Component {
   constructor(props) {
@@ -198,7 +218,8 @@ Let's play Beethoven Moonlight's sonata.
 ```javascript
 import React from 'react';
 import { Orchestra } from 'react-orchestra';
-
+// If you're using react-native then it's : 
+// import { Orchestra } from 'react-orchestra/native';
 const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/beet1track-medium-fast.mid';
 class App extends Component {
   constructor(props) {
@@ -261,6 +282,14 @@ Tests lint all js files using the js airbnb coding style and runs the jest tests
 ## Contributing
 
 You can contribute by submitting, and responding to issues. If you'd like to add a new feature PRs are very welcome, but please open an issue beforehand so we can discuss the optimal way to go when adding the feature !
+
+
+## Roadmap
+
+- [ ] Create NoteFactory component that takes in a scale name or chord name or Midi URL and creates user-rendered Notes.
+- [ ] Add tests that run on browser
+- [ ] Add react-orchestra/native jest tests
+- [ ] Add more web jest tests
 
 
 ## License
