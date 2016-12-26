@@ -15,7 +15,14 @@ React Orchestra can be integrated easily into any project.
 #### Native
 
 ##### Installing peer dependencies
-Under the hood RO uses [react-native-sound](https://github.com/zmxv/react-native-sound) to play and generate instrument notes.
+Under the hood RO uses :
+
+[react-native-sound](https://github.com/zmxv/react-native-sound) to play and generate instrument notes.
+
+[react-native-fs](https://github.com/johanneslumpe/react-native-fs) to cache sounds in the filesystem.
+
+[realm](https://github.com/realm/realm-js) as an offline store for caching and state storage
+
 
 In your project root :
 
@@ -24,17 +31,17 @@ In your project root :
 **With npm**
 
 ```
-npm install --save react-native-sound
+npm install --save react-native-sound react-native-fs realm
 ```
 ##### With yarn
 ```
-yarn add react-native-sound
+yarn add react-native-sound react-native-fs realm
 ```
 
 **Then link it :**
 
 ```
-react-native link react-native-sound
+react-native link
 ```
 
 #### Web
@@ -50,11 +57,11 @@ If your targeted platform is supported you can go ahead and install it.
 **With npm**
 
 ```
-npm install --save react-native-sound
+npm install --save react-orchestra
 ```
 ##### With yarn
 ```
-yarn add react-native-sound
+yarn add react-orchestra
 ```
 
 No need to link it ! It's plain JS.
