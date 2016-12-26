@@ -9,7 +9,7 @@ dependencies:
   cache_directories:
     - ~/.yarn-cache
   override:
-    - cd web/ && yarn install
+    - yarn install
 
 test:
   override:

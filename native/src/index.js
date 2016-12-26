@@ -1,13 +1,10 @@
 // require("babel-core/register");
 // require("babel-polyfill");
 
-import {
-  Note,
-  Instrument,
-  Orchestra,
-} from './platforms/web/';
+import Note from './components/Note';
+import Instrument from './components/Instrument';
+import Orchestra from './components/Orchestra';
 
-window.isTouchDevice = 'ontouchstart' in document.documentElement;
 export default {
   Instrument,
   Note,
