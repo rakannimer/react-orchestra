@@ -3,20 +3,31 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "init-app": "cd node_modules && git clone git@github.com:RakanNimer/react-orchestra.git --depth=1",
+    "init-app": "cd node_modules && git clone git@github.com:RakanNimer/react-orchestra.git --depth=1 && cd react-orchestra && yarn",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "native-base": "^0.5.19",
+    "randomcolor": "^0.4.4",
     "react": "15.4.1",
     "react-native": "0.39.2",
     "react-native-fs": "^2.0.1-rc.2",
     "react-native-sound": "^0.8.3",
+    "react-native-spinkit": "^0.1.5",
+    "react-native-vector-icons": "^3.0.0",
     "realm": "^0.15.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
     "jest": "18.0.0",
     "react-test-renderer": "15.4.1"
   },
