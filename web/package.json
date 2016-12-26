@@ -23,9 +23,6 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "babel": "^6.5.2",
-    "babel-eslint": "^7.1.1",
-    "babel-polyfill": "^6.20.0",
     "bluebird": "^3.4.6",
     "bulma": "^0.2.3",
     "classnames": "^2.2.5",
@@ -40,6 +37,9 @@
     "react": "15.x"
   },
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-eslint": "^7.1.1",
+    "babel-polyfill": "^6.20.0",
     "@kadira/storybook": "^2.21.0",
     "@kadira/storybook-addon-knobs": "^1.7.1",
     "@kadira/storybook-addon-notes": "^1.0.1",
