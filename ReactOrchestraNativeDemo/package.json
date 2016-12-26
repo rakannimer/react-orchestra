@@ -1,0 +1,26 @@
+{
+  "name": "ReactOrchestraNativeDemo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "init-app": "cd node_modules && git clone git@github.com:RakanNimer/react-orchestra.git --depth=1",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "15.4.1",
+    "react-native": "0.39.2",
+    "react-native-fs": "^2.0.1-rc.2",
+    "react-native-sound": "^0.8.3",
+    "realm": "^0.15.0"
+  },
+  "devDependencies": {
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "jest": "18.0.0",
+    "react-test-renderer": "15.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
