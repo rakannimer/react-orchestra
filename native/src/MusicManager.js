@@ -100,13 +100,14 @@ const loadMidi = async (midiURL) => {
   const midiKey = generateMidiKey(midiURL);
   const isInDB = await Store.exists('Midi', midiKey);
   let midiPath;
-  if (!isInDB) {
-    midiPath = midiKeyToLocalPath(midiURL);
-  } else {
-    const { localPath } = await getMidiFromRemote(midiURL);
-    await Store.set('Midi', midiKey, { localPath, remotePath: midiURL });
-    midiPath = localPath;
-  }
+  // if (!isInDB) {
+  //   alert('IS IN DB');
+  //   midiPath = midiKeyToLocalPath(midiURL);
+  // } else {
+  const { localPath } = await getMidiFromRemote(midiURL);
+  await Store.set('Midi', midiKey, { localPath, remotePath: midiURL });
+  midiPath = localPath;
+  // }
   let midifile;
   try {
     midifile = await RNFS.readFile(midiPath, 'base64');
