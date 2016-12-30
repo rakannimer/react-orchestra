@@ -20,7 +20,7 @@ Under the hood RO uses :
 
 [react-native-fs](https://github.com/johanneslumpe/react-native-fs) to cache sounds in the filesystem.
 
-[realm](https://github.com/realm/realm-js) as an offline store for caching and state storage ( might remove this in future versions unless I or someone builds up on realm features to improve react-orcchestra functionality )
+[realm](https://github.com/realm/realm-js) as an offline store for caching and state storage ( might remove this in future versions unless I or someone builds up on realm features to improve react-orchestra functionality )
 
 
 In your project root :
