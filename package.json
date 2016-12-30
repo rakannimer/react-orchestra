@@ -1,8 +1,8 @@
 {
   "name": "react-orchestra",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A toolbox to build interactive and smart instruments on the web and mobile.",
-  "main": "web/lib/index.js",
+  "main": "web/src/index.js",
   "scripts": {
     "test": "cd web && npm run test",
     "postinstall": "cd web && yarn || npm i"
