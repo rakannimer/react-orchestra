@@ -1,6 +1,6 @@
 {
-  "name": "@rakannimer/react-orchestra",
-  "version": "1.0.0",
+  "name": "react-orchestra",
+  "version": "0.1.0",
   "description": "A toolbox to build interactive and smart instruments on the web and mobile.",
   "main": "web/lib/index.js",
   "scripts": {
@@ -11,7 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/RakanNimer/react-orchestra.git"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react-native",
+    "music",
+    "notes",
+    "scales",
+    "instruments",
+    "music instrument",
+    "midi"
+  ],
   "author": "Rakan Nimer",
   "license": "LGPL-3.0",
   "bugs": {
