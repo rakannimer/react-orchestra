@@ -72,6 +72,7 @@ Let's start writing some instruments.
 ### TLDR; I just want to copy paste stuff !
 
 There you go :
+
 #### Web
 
 ```
@@ -263,7 +264,7 @@ class App extends Component {
 export default App;
 ```
 
-** 4. Creating a note factory **
+**4. Creating a note factory **
 
 This is useful when you want to generate notes that follow a given rule
 
