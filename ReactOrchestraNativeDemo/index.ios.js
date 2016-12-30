@@ -7,12 +7,10 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
 } from 'react-native';
 
 import Demo from './src/';
+
 export default class NativeDemo extends Component {
   render() {
     return (
