@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, ScrollView } from 'react-native';
 
 import { Instrument, Note } from 'react-orchestra/native';
 import OrchestraExample from './orchestra-example';
@@ -77,7 +77,7 @@ class Demo extends React.Component {
     const instrumentName = 'acoustic_grand_piano';
     const noteName = 'C3';
     return (
-      <View style={styles.container}>
+      <ScrollView>
         <Note name={noteName} instrumentName={instrumentName}>
           <View>
             <Text> C3 </Text>
@@ -92,18 +92,19 @@ class Demo extends React.Component {
           renderStaticInstrumentExample(this.state, this.playMelody, this.onInstrumentLoaded)
         }
         <View>
-          <Text>
-            Separator Text
+          <Text style={{ fontWeight: 'bold' }}>
+            Orchestra Example
           </Text>
         </View>
         <OrchestraExample />
         <View>
-          <Text>
-            Separator Text
+          <Text style={{ fontWeight: 'bold' }}>
+            Note Factory Example
           </Text>
         </View>
         <NoteFactoryExample />
-      </View>
+
+      </ScrollView>
     );
   }
 }
