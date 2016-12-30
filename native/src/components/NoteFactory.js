@@ -1,4 +1,6 @@
 import React from 'react';
+import { View } from 'react-native';
+
 import Note from './Note';
 // import NoteHelpers from '../utils/';
 import { InstrumentHelpers } from '../InstrumentJS';
@@ -45,11 +47,11 @@ class NoteFactory extends React.Component {
         break;
     }
     return (
-      <div>
+      <View>
         {
           renderedNotes
         }
-      </div>
+      </View>
     );
   }
 }
