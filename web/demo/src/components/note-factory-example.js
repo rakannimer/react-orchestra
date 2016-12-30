@@ -1,5 +1,5 @@
 import React from 'react';
-import { NoteFactory } from '../../../src';
+import { NoteFactory } from '../../../lib/';
 
 const renderNote = (instrumentName, noteName) => <div style={{ cursor: 'pointer' }}> I am a note : {instrumentName} {noteName} You can click me ! </div>;
 

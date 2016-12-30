@@ -6,7 +6,7 @@ var _immutabilityHelper = require('immutability-helper');
 
 var _immutabilityHelper2 = _interopRequireDefault(_immutabilityHelper);
 
-var _MidiIO = require('../../MidiIO');
+var _MidiIO = require('../../MidiIO/src/MidiIO');
 
 var _MidiIO2 = _interopRequireDefault(_MidiIO);
 

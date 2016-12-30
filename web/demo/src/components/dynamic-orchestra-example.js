@@ -1,5 +1,5 @@
 import React from 'react';
-import { Orchestra } from '../../../src';
+import { Orchestra } from '../../../lib/';
 
 const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/beet1track-medium-fast.mid';
 class StaticOrchestraExample extends React.Component {
