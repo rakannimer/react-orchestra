@@ -32,7 +32,7 @@ class StaticInstrumentExample extends React.Component {
             {/*
               You can put any react element here native or web.
             */}
-            <p className="control">
+            <div className="control">
               <a className={`button ${this.state.playA ? 'is-primary' : ''}`}>
                 This is what I want my note to look like ! I can put anything in here.
                 <img
@@ -41,14 +41,14 @@ class StaticInstrumentExample extends React.Component {
                   width="30"
                 />
               </a>
-            </p>
+            </div>
           </Note>
           <Note name={'C3'} play={this.state.playC}>
-            <p className="control">
+            <div className="control">
               <div className={`button ${this.state.playC ? 'is-primary' : ''}`}>
                 Another note
               </div>
-            </p>
+            </div>
           </Note>
         </Instrument>
         <div className="control">

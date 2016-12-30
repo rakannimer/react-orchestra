@@ -234,6 +234,38 @@ class App extends Component {
 }
 export default App;
 ```
+** 4. Creating a note factory **
+
+This is useful when you want to generate notes that follow a given rule
+
+Example : Render the C Major scale starting at the third octave over 2 octaves
+
+```javascript
+import React from 'react';
+import { NoteFactory } from 'react-orchestra';
+
+const renderNote = (instrumentName, noteName) => <div style={{ cursor: 'pointer' }}> I am a note : {instrumentName} {noteName} You can click me ! </div>;
+
+class NoteFactoryExample extends React.Component {
+  render() {
+    return (
+      <NoteFactory
+        type="scale"
+        scaleName="ionian"
+        noteName="C"
+        instrumentName="acoustic_grand_piano"
+        startOctave="3"
+        octaveCount="1"
+        renderNote={renderNote}
+      />
+    );
+  }
+}
+export default NoteFactoryExample;
+
+```
+
+
 
 
 

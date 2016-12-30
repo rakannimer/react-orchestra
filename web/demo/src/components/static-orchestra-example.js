@@ -6,7 +6,7 @@ class StaticOrchestraExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      play: true,
+      play: false,
       playingNotes: {
         inexistingNoteName: true,
       },

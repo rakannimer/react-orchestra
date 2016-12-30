@@ -21,11 +21,11 @@ class InteractiveInstrument extends React.Component {
     return (
       <Instrument name={'acoustic_grand_piano'} onStartPlaying={this.onStartPlaying} onStopPlaying={this.onStopPlaying} interactive>
         <Note name={'A3'} className={'animated bounce'}>
-          <p className="control">
+          <div className="control">
             <div className={`button ${this.state.playA ? 'is-primary' : ''}`}>
               Click me to play A3
             </div>
-          </p>
+          </div>
         </Note>
         <Note name={'C3'}>
           <div className="control">
