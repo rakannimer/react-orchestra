@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 10px;
+  color: white;
+}
+
+.App-intro {
+  font-size: medium;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding:35px;
+}
+.container .logger {
+  flex: 1;
+}
+.container .test-links {
+  flex: 1;
+  text-align:left;
+}
+
+a h5 {
+  color: #AAA;
+}
+
+a h5:hover {
+  color: black;
+  cursor: pointer;
+}
+.logger {
+  max-height:600px;
+  overflow-y: auto;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.clicked h5{
+  text-decoration: underline;
+  color: black;
+}

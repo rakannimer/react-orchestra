@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 
 import { Instrument, Note } from 'react-orchestra/native';
 import OrchestraExample from './orchestra-example';
+import NoteFactoryExample from './note-factory-example';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -72,12 +73,6 @@ class Demo extends React.Component {
     await delay(1000);
     this.setState({ playC: false });
   }
-  // onStartPlaying() {
-  //
-  // }
-  // onStopPlaying() {
-  //
-  // }
   render() {
     const instrumentName = 'acoustic_grand_piano';
     const noteName = 'C3';
@@ -96,7 +91,18 @@ class Demo extends React.Component {
         {
           renderStaticInstrumentExample(this.state, this.playMelody, this.onInstrumentLoaded)
         }
+        <View>
+          <Text>
+            Separator Text
+          </Text>
+        </View>
         <OrchestraExample />
+        <View>
+          <Text>
+            Separator Text
+          </Text>
+        </View>
+        <NoteFactoryExample />
       </View>
     );
   }

@@ -5,24 +5,6 @@ import { ScrollView, View, Text,
 
 import { Orchestra } from 'react-orchestra/native';
 
-// const styles = StyleSheet.create({
-//   button: {
-//     paddingHorizontal: 20,
-//     paddingVertical: 20,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-//   isPlaying: {
-//     backgroundColor: 'red',
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5,
-//   },
-// });
-
 const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/beet1track-medium-fast.mid';
 // const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/single-track-test-tempo-10.mid'
 // const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/Beethoven+Fur+Elise+Easy+t30.mid';
@@ -52,7 +34,10 @@ class OrchestraExample extends React.Component {
     return parsedMidi;
   }
   onInstrumentsReady(instruments) {
-    this.setState({ play: true, instrumentLoaded: true });
+    this.setState({
+      // play: true,
+      instrumentLoaded: true
+    });
     return instruments;
   }
   //eslint-disable-next-line
