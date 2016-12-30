@@ -1,6 +1,6 @@
 {
   "name": "react-orchestra",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A toolbox to build interactive and smart instruments on the web and mobile.",
   "main": "web/lib/index.js",
   "scripts": {
