@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instrument, Note } from '../../../lib/';
+import { Instrument, Note } from '../../../src/';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 

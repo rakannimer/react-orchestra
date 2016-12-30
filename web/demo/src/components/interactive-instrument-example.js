@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instrument, Note } from '../../../lib/';
+import { Instrument, Note } from '../../../src/';
 
 class InteractiveInstrument extends React.Component {
   constructor(props) {
