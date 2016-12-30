@@ -312,7 +312,7 @@ You can contribute by submitting, and responding to issues. If you'd like to add
 
 ## Roadmap
 
-- [ ] Create NoteFactory component that takes in a scale name or chord name or Midi URL and creates user-rendered Notes.
+- [x] Create NoteFactory component that takes in a scale name or chord name or Midi URL and creates user-rendered Notes.
 - [ ] Add tests that run on browser
 - [ ] Add react-orchestra/native jest tests
 - [ ] Add more web jest tests
