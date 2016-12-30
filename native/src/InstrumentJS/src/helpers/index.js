@@ -9,13 +9,13 @@ import getIntervalPermutationsFromNoteNames from './getIntervalPermutationsFromN
 import getScalesFromNoteNames from './getScalesFromNoteNames';
 import getNoteNamesFromIntervals from './getNoteNamesFromIntervals';
 import getNoteNamesFromChordName from './getNoteNamesFromChordName';
-import getJSONFromMidiURL from './getJSONFromMidiURL';
-import getTracksAndMetaFromParsedMidi from './getTracksAndMetaFromParsedMidi';
-import getTracksAndMetaFromUrl from './getTracksAndMetaFromUrl';
+// import getJSONFromMidiURL from './getJSONFromMidiURL';
+// import getTracksAndMetaFromParsedMidi from './getTracksAndMetaFromParsedMidi';
+// import getTracksAndMetaFromUrl from './getTracksAndMetaFromUrl';
 import getScaleNotes from './getScaleNotes';
 import isInHigherOctave from './isInHigherOctave';
-import updateTempo from './updateTempo';
-import createMelodyFromNotes from './createMelodyFromNotes';
+// import updateTempo from './updateTempo';
+// import createMelodyFromNotes from './createMelodyFromNotes';
 
 export const InstrumentHelpers = {
   getUniqueNoteNames,
@@ -27,13 +27,13 @@ export const InstrumentHelpers = {
   getScalesFromNoteNames,
   getNoteNamesFromIntervals,
   getNoteNamesFromChordName,
-  getJSONFromMidiURL,
-  getTracksAndMetaFromParsedMidi,
-  getTracksAndMetaFromUrl,
+  // getJSONFromMidiURL,
+  // getTracksAndMetaFromParsedMidi,
+  // getTracksAndMetaFromUrl,
   getScaleNotes,
   isInHigherOctave,
-  updateTempo,
-  createMelodyFromNotes,
+  // updateTempo,
+  // createMelodyFromNotes,
 };
 
 export {
