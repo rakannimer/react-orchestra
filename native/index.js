@@ -1,8 +1,8 @@
-import Note from './components/Note';
-import Instrument from './components/Instrument';
-import Orchestra from './components/Orchestra';
-import NoteFactory from './components/NoteFactory';
-import MidiTrack from './components/MidiTrack';
+import Note from './src/components/Note';
+import Instrument from './src/components/Instrument';
+import Orchestra from './src/components/Orchestra';
+import NoteFactory from './src/components/NoteFactory';
+import MidiTrack from './src/components/MidiTrack';
 
 export default {
   Instrument,
