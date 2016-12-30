@@ -80,24 +80,24 @@ yarn add react-orchestra || { npm i -S react-orchestra; }
 ```
 #### Native
 ```
-yarn add react-native-sound || { npm i -S react-native-sound; }
-react-native link react-native-sound
+yarn add react-native-sound react-native-fs realm || { npm i -S react-native-sound react-native-fs realm; }
+react-native link react-native-sound react-native-fs realm
 yarn add react-orchestra || { npm i -S react-orchestra; }
 ```
 
 ## API + Examples
 
-Let's build a couple of use-cases to get familiar with the API. 
-Or you can directly check out and run the examples : 
+Let's build a couple of use-cases to get familiar with the API.
+Or you can directly check out and run the examples :
 
-- Web example : 
+- Web example :
 ```sh
 git clone git@github.com:RakanNimer/react-orchestra.git
 cd  react-orchestra/web/
 {yarn && yarn start} || {npm i && npm start}
 ```
 
-- Native example : 
+- Native example :
 ```sh
 git clone git@github.com:RakanNimer/react-orchestra.git
 cd  react-orchestra/ReactOrchestraNativeDemo/
@@ -111,7 +111,7 @@ react-native run-ios # or run-android
 ```javascript
 import React from 'react';
 import { Instrument, Note } from 'react-orchestra';
-// If you're using react-native then it's : 
+// If you're using react-native then it's :
 // import { Instrument, Note } from 'react-orchestra/native';
 
 const delay = ms => new Promise(resolve => setTimeout(ms, resolve));
@@ -170,7 +170,7 @@ Let's build an instrument that the user can play by clicking or tapping on notes
 ```javascript
 import React from 'react';
 import { Instrument, Note } from 'react-orchestra';
-// If you're using react-native then it's : 
+// If you're using react-native then it's :
 // import { Instrument, Note } from 'react-orchestra/native';
 
 class App extends React.Component {
@@ -218,7 +218,7 @@ Let's play Beethoven Moonlight's sonata.
 ```javascript
 import React from 'react';
 import { Orchestra } from 'react-orchestra';
-// If you're using react-native then it's : 
+// If you're using react-native then it's :
 // import { Orchestra } from 'react-orchestra/native';
 const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/beet1track-medium-fast.mid';
 class App extends Component {
