@@ -46,13 +46,13 @@ export {
   getScalesFromNoteNames,
   getNoteNamesFromIntervals,
   getNoteNamesFromChordName,
-  getJSONFromMidiURL,
-  getTracksAndMetaFromParsedMidi,
-  getTracksAndMetaFromUrl,
+  // getJSONFromMidiURL,
+  // getTracksAndMetaFromParsedMidi,
+  // getTracksAndMetaFromUrl,
   getScaleNotes,
   isInHigherOctave,
-  updateTempo,
-  createMelodyFromNotes,
+  // updateTempo,
+  // createMelodyFromNotes,
 };
 
 export default InstrumentHelpers; // getUniqueNoteNames;

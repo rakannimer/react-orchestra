@@ -14,7 +14,6 @@
     "docs": "./node_modules/.bin/jsdoc src/helpers/*.js src/Instruments.js src/Note.js ./README.md -d ./docs"
   },
   "dependencies": {
-    "MidiIO": "git+https://a616ae14b9b11774d04278d924c162e3f9276e9b:x-oauth-basic@github.com/rakannimer/MidiIO.git",
     "babel-loader": "^6.2.5",
     "bluebird": "^3.4.6",
     "chance": "^1.0.4",

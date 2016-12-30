@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import Note from './Note';
 // import NoteHelpers from '../utils/';
-import { InstrumentHelpers } from '../InstrumentJS';
+import { InstrumentHelpers } from '../InstrumentJS/src/';
 
 import callIfExists from '../utils/callIfExists';
 

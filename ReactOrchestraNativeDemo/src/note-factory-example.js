@@ -1,12 +1,14 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { NoteFactory } from 'react-orchestra/native';
 
-const renderNote = (instrumentName, noteName) => <View style={{ backgroundColor: 'papayawhip' }}> I am a note : {instrumentName} {noteName} You can click me ! </View>;
-
+const renderNote = (instrumentName, noteName) =>{
+  // console.warn('rendering '+instrumentName, noteName);
+  return (<View><Text> I am a note : {instrumentName} {noteName} You can click me ! </Text></View>);
+}
 class NoteFactoryExample extends React.Component {
   render() {
-    console.warn(JSON.stringify(Object.keys(NoteFactory), 2, 2));
+    // console.warn(JSON.stringify(Object.keys(a), 2, 2));
     return (
       <NoteFactory
         type="scale"
