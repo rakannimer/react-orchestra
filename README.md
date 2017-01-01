@@ -300,6 +300,13 @@ class NoteFactoryExample extends React.Component {
 export default NoteFactoryExample;
 
 ```
+## Documentation
+
+- [API](docs/api.md#api)
+  - [`<Note>`](docs/api.md#Note)
+  - [`<Instrument>`](docs/api.md#Instrument)
+  - [`<Orchestra>`](docs/api.md#Orchestra)
+  - [`<NoteFactory>`](docs/api.md#NoteFactory)
 
 
 ## Running the tests
