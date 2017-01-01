@@ -308,6 +308,11 @@ export default NoteFactoryExample;
   - [`<Orchestra>`](docs/api.md#Orchestra)
   - [`<NoteFactory>`](docs/api.md#NoteFactory)
 
+## Showcase 
+
+Did you build something cool with this library ? 
+
+Show it off here by [submittiing a pull request](https://github.com/RakanNimer/react-orchestra/compare).
 
 ## Running the tests
 
