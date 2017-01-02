@@ -10,6 +10,7 @@ import StaticInstrumentExample from './components/static-instrument-example';
 import InteractiveInstrumentExample from './components/interactive-instrument-example';
 import StaticOrchestraExample from './components/static-orchestra-example';
 import NoteFactoryExample from './components/note-factory-example';
+import KeyBindingExample from './components/key-binding-example';
 
 class Demo extends React.Component {
   render() {
@@ -66,6 +67,18 @@ class Demo extends React.Component {
               </h2>
               <hr />
               <NoteFactoryExample />
+            </div>
+          </div>
+        </section>
+        <section className="section">
+          <div className="container">
+            <div className="heading">
+              <h1 className="title">Key Binding example</h1>
+              <h2 className="subtitle">
+                Notes that listen to q w e r t y u respectively.
+                Mapping of keyboard keys to notes
+              </h2>
+              <KeyBindingExample />
             </div>
           </div>
         </section>

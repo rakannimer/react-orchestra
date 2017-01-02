@@ -90,9 +90,6 @@ A component that renders notes based on a given rule (scale for now, chords and 
 
 #### Props
 
-startOctave
-octaveCount
-renderNote
 * `type` (*String*): Generator type. `scale`.
 * `scaleName` (*String*): Scale name, full list [available here](web/src/constants/SCALES.js)
 * `noteName` (*Function*) First note name to generated the scale based on.
@@ -101,6 +98,21 @@ renderNote
 * `octaveCount` (*Integer*) Number of octaves to render.
 * `renderNote` (*Function(instrumentName, noteName)*) A callback fired for each note that is being rendered by the NoteFactory. Should return a valid *ReactElement*.
  released. Default is 600 ms.
+
+#### Example
+
+Check [examples directory](web/demo/src/components/).
+
+<a id="KeyBinding"></a>
+### `<KeyBinding>` (*web only*)
+
+A micro helper component that listens to keyboard events to help controlling note state with keyboard.
+
+#### Props
+
+* `keyName` (*String*): Keyboard keys and shortcuts to listen to. Wrapper to [react-keymaster](https://github.com/RakanNimer/react-keymaster)
+* `onKeyDown` (*Function(keyName)*) A callback fired when ``` keyName ``` is pressed on the keyboard
+* `onKeyUp` (*Function(keyName)*) A callback fired when ``` keyName ``` stops being pressed on the keyboard
 
 #### Example
 

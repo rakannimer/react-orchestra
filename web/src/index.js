@@ -2,6 +2,7 @@ import Instrument from './components/Instrument';
 import Note from './components/Note';
 import Orchestra from './components/Orchestra';
 import NoteFactory from './components/NoteFactory';
+import KeyBinding from './components/KeyBinding';
 
 // import NoteHelpers from './utils/NoteHelpers';
 
@@ -12,6 +13,7 @@ export default {
   Note,
   Orchestra,
   NoteFactory,
+  KeyBinding,
 //  NoteHelpers
 };
 
@@ -20,5 +22,6 @@ export {
   Note,
   Orchestra,
   NoteFactory,
+  KeyBinding,
 //  NoteHelpers
 };
