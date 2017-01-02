@@ -103,5 +103,13 @@ class Note extends React.Component {
 }
 Note.defaultProps = {
   play: false,
+  instrumentName: 'acoustic_grand_piano',
+  name: 'C3',
+  onNoteLoaded: () => {},
+  interactive: true,
+  fadeOutDuration: 600,
+  loader: <div />,
+  className: '',
+  children: <div />,
 };
 export default Note;
