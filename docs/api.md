@@ -92,7 +92,7 @@ A component that renders notes based on a given rule (scale for now, chords and 
 
 * `type` (*String*): Generator type. `scale`.
 * `scaleName` (*String*): Scale name, full list [available here](web/src/constants/SCALES.js)
-* `noteName` (*Function*) First note name to generated the scale based on.
+* `noteName` (*String*) First note name to generated the scale based on.
 * `instrumentName` (*String*): Instrument name from the MusyngKite soundfont. [Full list of supported instruments](web/src/constants/INSTRUMENTS.js). This is optional if the <Note/> is a child of an <Instrument/>
 * `startOctave` (*Integer*) Starting octave for note generation.
 * `octaveCount` (*Integer*) Number of octaves to render.
