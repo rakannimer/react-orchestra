@@ -30,6 +30,7 @@
   "dependencies": {
     "base-64": "^0.1.0",
     "classnames": "^2.2.5",
+    "localforage": "^1.4.3",
     "midi-file-parser": "^1.0.0",
     "react-keymaster": "^0.1.0",
     "react-native-fs": "^2.0.1-rc.2",
