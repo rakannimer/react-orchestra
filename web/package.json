@@ -33,6 +33,7 @@
     "midi-file-parser": "^1.0.0",
     "midi-writer-js": "^1.4.0",
     "object-assign": "^4.1.0",
+    "react-keymaster": "^0.1.0",
     "soundfont-player": "^0.10.5"
   },
   "peerDependencies": {

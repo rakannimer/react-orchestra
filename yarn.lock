@@ -157,8 +157,8 @@ dashdash@^1.12.0:
     assert-plus "^1.0.0"
 
 debug@^2.1.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.5.2.tgz#50c295a53dbf1657146e0c1b21307275e90d49cb"
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
   dependencies:
     ms "0.7.2"
 
@@ -422,6 +422,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.3.6"
 
+"keymaster@github:rakannimer/keymaster":
+  version "1.6.2"
+  resolved "https://codeload.github.com/rakannimer/keymaster/tar.gz/99ed6b7629bd76af6628c9faf901fef3e9e43957"
+
 midi-file-parser@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/midi-file-parser/-/midi-file-parser-1.0.0.tgz#175a013f277e9d26acf94cfe6c03b13abb0a1e9e"
@@ -567,6 +571,12 @@ rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~1.0.4"
 
+react-keymaster@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-keymaster/-/react-keymaster-0.1.0.tgz#8c6c26ac6ecf991f28a820140dc371233529b8dc"
+  dependencies:
+    keymaster rakannimer/keymaster
+
 react-native-fs@^2.0.1-rc.2:
   version "2.0.1-rc.2"
   resolved "https://registry.yarnpkg.com/react-native-fs/-/react-native-fs-2.0.1-rc.2.tgz#e7e00b1d5c48c52c4ca8cd76b4ea62440ae54082"
@@ -603,16 +613,17 @@ readable-stream@~2.1.4:
     util-deprecate "~1.0.1"
 
 realm@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/realm/-/realm-0.15.0.tgz#d370a4892ff1279ed416ddf4e6daace66f2b527b"
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/realm/-/realm-0.15.2.tgz#c4693aa456f02468ef1264d8ae6dfec715f9cdbf"
   dependencies:
     nan "^2.3.3"
     needle "^1.3.0"
     node-pre-gyp "^0.6.30"
+    request "^2.78.0"
     sync-request "^3.0.1"
     url-parse "^1.1.7"
 
-request@^2.79.0:
+request@^2.78.0, request@^2.79.0:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:
