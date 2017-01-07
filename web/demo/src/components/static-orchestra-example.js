@@ -1,7 +1,10 @@
 import React from 'react';
 import { Orchestra } from '../../../src/';
 
-const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/beet1track-medium-fast.mid';
+// Beethoven moonlight sonata fast (perf test)
+// const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/beet1track-medium-fast.mid';
+const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/Mr.+Robot+Main+Theme+midi.mid';
+
 class StaticOrchestraExample extends React.Component {
   constructor(props) {
     super(props);

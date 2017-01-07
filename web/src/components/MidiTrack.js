@@ -35,7 +35,7 @@ export default class MidiTrack extends React.Component {
     }
   }
   async onTimerCall(note) {
-    if (!this.props.play) return;
+    // if (!this.props.play) return;
     const { noteName, instrumentName, durationInMS } = note;
     const key = generateNoteKey(instrumentName, noteName);
     this.setState({
@@ -44,12 +44,10 @@ export default class MidiTrack extends React.Component {
       },
     });
     callIfExists(this.props.onNotePlayed, instrumentName, noteName);
+    const updatedPlayingNotes = Object.assign({}, this.state.playingNotes);
+    delete updatedPlayingNotes[key];
     await delay(durationInMS);
-    this.setState({
-      playingNotes: {
-        [key]: false,
-      },
-    });
+    this.setState({ playingNotes: updatedPlayingNotes });
     callIfExists(this.props.onNoteStopPlaying, instrumentName, noteName);
   }
   async playTrack() {
