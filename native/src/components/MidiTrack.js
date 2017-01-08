@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-// import { View } from 'react-native';
+import { View } from 'react-native';
 
 import MidiIO from '../MidiIO/src/';
 import Note from './Note';
@@ -90,7 +90,7 @@ export default class MidiTrack extends React.Component {
       </Note>
     ));
     return (
-      <Instrument name={instrumentName} onInstrumentLoaded={this.onInstrumentLoaded}>
+      <Instrument name={instrumentName} onInstrumentLoaded={this.onInstrumentLoaded} style={this.props.instrumentStyle}>
         { notesElements }
       </Instrument>
     );
@@ -108,6 +108,7 @@ MidiTrack.propTypes = {
       instrumentName: PropTypes.string,
       deltaTime: PropTypes.number,
       msPerTick: PropTypes.number,
+      style: View.propTypes.style,
     },
   )),
 };

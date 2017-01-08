@@ -58,22 +58,18 @@ class Orchestra extends React.Component {
         { this.props.children }
         {
           this.state.tracks.map((track, i) => (
-            <View key={i}>
-              <MidiTrack
-                onNotePlayed={this.onNotePlayed}
-                onNoteStopPlaying={this.onNoteStopPlaying}
-                notes={track}
-                meta={this.state.meta}
-                trackIndex={i}
-                key={i}
-                renderNote={this.props.renderNote}
-                play={this.props.selectedTracks.indexOf(i) > -1 && this.props.play}
-                onInstrumentsReady={this.onInstrumentsReady}
-              />
-              <Text>
-                Separator
-              </Text>
-            </View>
+            <MidiTrack
+              onNotePlayed={this.onNotePlayed}
+              onNoteStopPlaying={this.onNoteStopPlaying}
+              notes={track}
+              meta={this.state.meta}
+              trackIndex={i}
+              key={i}
+              renderNote={this.props.renderNote}
+              play={this.props.selectedTracks.indexOf(i) > -1 && this.props.play}
+              onInstrumentsReady={this.onInstrumentsReady}
+              instrumentStyle={this.props.instrumentStyle}
+            />
           ))
         }
       </View>
