@@ -75,7 +75,7 @@ export default class MidiTrack extends React.Component {
     const meta = this.props.meta;
     const trackIndex = this.props.trackIndex;
     const uniqueNotes = MidiIO.getUniqueFromMidiNotes(notes);
-    const instrumentName = meta.instrumentNames[trackIndex];
+    const instrumentName = this.props.instrumentName || meta.instrumentNames[trackIndex];
     const notesElements = uniqueNotes.map((noteName, i) => (
       <Note
         play={
@@ -90,7 +90,11 @@ export default class MidiTrack extends React.Component {
       </Note>
     ));
     return (
-      <Instrument name={instrumentName} onInstrumentLoaded={this.onInstrumentLoaded} style={this.props.instrumentStyle}>
+      <Instrument
+        name={instrumentName}
+        onInstrumentLoaded={this.onInstrumentLoaded}
+        style={this.props.instrumentStyle}
+      >
         { notesElements }
       </Instrument>
     );

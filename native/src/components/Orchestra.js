@@ -69,6 +69,7 @@ class Orchestra extends React.Component {
               play={this.props.selectedTracks.indexOf(i) > -1 && this.props.play}
               onInstrumentsReady={this.onInstrumentsReady}
               instrumentStyle={this.props.instrumentStyle}
+              instrumentName={this.props.instrumentName || null}
             />
           ))
         }
