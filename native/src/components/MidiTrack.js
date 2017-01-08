@@ -85,7 +85,7 @@ export default class MidiTrack extends React.Component {
         key={i}
       >
         {
-          callIfExists(this.props.renderNote, instrumentName, sharpToBemol(noteName))
+          callIfExists(this.props.renderNote, instrumentName, sharpToBemol(noteName), i)
         }
       </Note>
     ));
