@@ -59,8 +59,8 @@ class Orchestra extends React.Component {
         {
           this.state.tracks.map((track, i) => (
             <MidiTrack
-              onNotePlayed={this.onNotePlayed}
-              onNoteStopPlaying={this.onNoteStopPlaying}
+              onNotePlayed={this.props.onNotePlayed}
+              onNoteStopPlaying={this.props.onNoteStopPlaying}
               notes={track}
               meta={this.state.meta}
               trackIndex={i}
@@ -84,5 +84,6 @@ Orchestra.propTypes = {
   play: PropTypes.bool,
   selectedTracks: PropTypes.arrayOf(PropTypes.number),
   onNotePlayed: PropTypes.func,
+  onNoteStopPlaying: PropTypes.func,
 };
 export default Orchestra;

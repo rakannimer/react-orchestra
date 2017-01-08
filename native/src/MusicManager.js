@@ -43,7 +43,7 @@ const playNote = (sound, volume = 1, loopCount = 0) =>
        if (success) {
          resolve(sound);
        } else {
-         console.warn(`Couldn't play sound in MusicManager.playNote 😞 : ${err.message}`);
+         console.warn(`Couldn't play sound in MusicManager.playNote 😞 : ${JSON.stringify(err, 2, 2)}`);
          reject(err);
        }
      }).setCurrentTime(0);

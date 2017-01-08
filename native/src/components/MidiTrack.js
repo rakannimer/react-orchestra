@@ -15,7 +15,7 @@ import isDefined from '../utils/isDefined';
 
 const waitAndRun = (fnc, waitTime, ...args) => setTimeout(fnc.bind(...args), waitTime);
 
-export default class MidiTrack extends React.Component {
+export default class MidiTrack extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -69,6 +69,28 @@ export default class MidiTrack extends React.Component {
     for (let i = 0; i < this.noteTimers.length; i += 1) {
       clearTimeout(this.noteTimers[i]);
     }
+    this.noteTimers = [];
+  }
+  renderNotes(uniqueNotes) {
+    const notes = uniqueNotes.map((noteName, i) => {
+      const meta = this.props.meta;
+      const trackIndex = this.props.trackIndex;
+      const instrumentName = this.props.instrumentName || meta.instrumentNames[trackIndex];
+      return (<Note
+        play={
+        generateNoteKey(instrumentName, noteName) in isDefined(this.state.playingNotes, {})
+      }
+        name={sharpToBemol(noteName)}
+        key={i}
+        onStartPlayingNote={this.props.onNotePlayed}
+        onStopPlayingNote={this.props.onNoteStopPlaying}
+      >
+        {
+          this.props.renderNote(instrumentName, sharpToBemol(noteName), i)
+        }
+      </Note>);
+    });
+    return notes;
   }
   render() {
     const notes = this.props.notes;
@@ -76,32 +98,37 @@ export default class MidiTrack extends React.Component {
     const trackIndex = this.props.trackIndex;
     const uniqueNotes = MidiIO.getUniqueFromMidiNotes(notes);
     const instrumentName = this.props.instrumentName || meta.instrumentNames[trackIndex];
-    const notesElements = uniqueNotes.map((noteName, i) => (
-      <Note
-        play={
-          generateNoteKey(instrumentName, noteName) in isDefined(this.state.playingNotes, {})
-        }
-        name={sharpToBemol(noteName)}
-        key={i}
-      >
-        {
-          callIfExists(this.props.renderNote, instrumentName, sharpToBemol(noteName), i)
-        }
-      </Note>
-    ));
     return (
       <Instrument
         name={instrumentName}
         onInstrumentLoaded={this.onInstrumentLoaded}
         style={this.props.instrumentStyle}
       >
-        { notesElements }
+        {
+          this.renderNotes(uniqueNotes)
+          // uniqueNotes.map((noteName, i) => (
+          //   <Note
+          //     play={
+          //     generateNoteKey(instrumentName, noteName) in isDefined(this.state.playingNotes, {})
+          //   }
+          //     name={sharpToBemol(noteName)}
+          //     key={i}
+          //     onStartPlayingNote={this.props.onNotePlayed}
+          //     onStopPlayingNote={this.props.onNoteStopPlaying}
+          //   >
+          //     {
+          //       this.props.renderNote(instrumentName, sharpToBemol(noteName), i)
+          //     }
+          //   </Note>))
+        }
       </Instrument>
     );
   }
 }
 
 MidiTrack.propTypes = {
+  onNotePlayed: PropTypes.func,
+  onNoteStopPlaying: PropTypes.func,
   notes: PropTypes.arrayOf(PropTypes.shape(
     {
       noteNumber: PropTypes.number,

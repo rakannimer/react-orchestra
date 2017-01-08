@@ -7,10 +7,9 @@ import {
   loadSound,
 } from '../MusicManager';
 
-import callIfExists from '../utils/callIfExists';
 import isDefined from '../utils/isDefined';
 
-class Note extends React.Component {
+class Note extends React.PureComponent {
   constructor(props) {
     super(props);
     this.playingBuffers = [];
@@ -40,6 +39,12 @@ class Note extends React.Component {
       await this.stopPlayingNote();
     }
   }
+  shouldComponentUpdate(nextProps, nextState) {
+    // TODO: split into consts
+    // return true;
+    const shouldUpdate = this.state.isLoading || (nextProps.name !== this.props.name) || (nextProps.instrumentName !== this.props.instrumentName) || (nextState.isPlaying !== this.state.isPlaying) || (nextProps.play !== this.props.play) || this.state.isPlaying || this.state.isPlaying !== nextState.isPlaying;
+    return shouldUpdate;
+  }
   componentWillUnmount() {
     this.sound.release();
   }
@@ -53,13 +58,14 @@ class Note extends React.Component {
       return null;
     }
     this.setState({ isLoading: false });
-    callIfExists(this.props.onNoteLoaded, this.props.instrumentName, this.props.name);
+    this.props.onNoteLoaded(this.props.instrumentName, this.props.name);
     return this.sound;
   }
   async startPlayingNote() {
     this.setState({ isPlaying: true });
     try {
       // Need to create a new sound each time to avoid audio glitch on IOS when playing fast
+      this.props.onStartPlayingNote(this.props.instrumentName, this.props.name);
       this.sound = await loadSound(this.props.instrumentName, this.props.name);
       const buffer = await playNote(this.sound);
       return buffer;
@@ -70,6 +76,7 @@ class Note extends React.Component {
   }
   async stopPlayingNote() {
     await stopPlayingNote(this.sound, this.props.delayPressOut);
+    this.props.onStopPlayingNote(this.props.instrumentName, this.props.name);
     this.setState({ isPlaying: false });
   }
   render() {
@@ -99,114 +106,9 @@ class Note extends React.Component {
 
 Note.defaultProps = {
   play: false,
+  onStartPlayingNote: () => {},
+  onStopPlayingNote: () => {},
+  onNoteLoaded: () => {},
   delayPressOut: 1500,
 };
 export default Note;
-//
-// import React from 'react';
-// import classnames from 'classnames';
-// import {
-//   stopPlayingNote,
-//   playNote,
-//   loadSound,
-// } from '../MusicManager';
-// import callIfExists from '../../../utils/callIfExists';
-// import isDefined from '../../../utils/isDefined';
-//
-// class Note extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.playingBuffers = [];
-//     this.state = {
-//       isPlaying: false,
-//       isLoading: true,
-//     };
-//     this.startPlayingNote = this.startPlayingNote.bind(this);
-//     this.stopPlayingNote = this.stopPlayingNote.bind(this);
-//     this.onClickStart = this.onClickStart.bind(this);
-//   }
-//   async componentDidMount() {
-//     await this.loadSound();
-//   }
-//   async componentWillReceiveProps(nextProps) {
-//     if (
-//       (nextProps.instrumentName !== this.props.instrumentName) ||
-//       (nextProps.name !== this.props.name)
-//     ) {
-//       await this.loadSound();
-//     }
-//     if (!this.props.play && nextProps.play) {
-//       await this.startPlayingNote();
-//       // console.log('Changed props to play, started playing note');
-//     }
-//     if (this.props.play && !nextProps.play) {
-//       await this.stopPlayingNote();
-//       // console.log('Changed props to stop playing');
-//     }
-//   }
-//   onClickStart() {
-//     if (window.isTouchDevice) {
-//       return;
-//     }
-//     this.startPlayingNote();
-//   }
-//   async loadSound() {
-//     this.setState({ isLoading: true });
-//     try {
-//       await loadSound(this.props.instrumentName, this.props.name);
-//     } catch (err) {
-//       this.setState({ isLoading: false });
-//       return;
-//     }
-//     this.setState({ isLoading: false });
-//     callIfExists(this.props.onNoteLoaded, this.props.instrumentName, this.props.name);
-//   }
-//   async startPlayingNote() {
-//     // if (this.props.interactive === false) return;
-//     this.setState({ isPlaying: true });
-//     try {
-//       const buffer = await playNote(this.props.instrumentName, this.props.name);
-//       this.playingBuffers.push(buffer);
-//     } catch (err) {
-//       console.warn('Something wrong happened with the audio api while playing note ');
-//     }
-//   }
-//   async stopPlayingNote() {
-//     if (this.playingBuffers && this.playingBuffers.length === 0) {
-//       return;
-//     }
-//     const buffer = this.playingBuffers.pop();
-//     const fadeOutDuration = this.props.fadeOutDuration ? this.props.fadeOutDuration : 700;
-//     await stopPlayingNote(buffer, fadeOutDuration);
-//     this.setState({ isPlaying: false });
-//   }
-//   render() {
-//     if (this.state.isLoading) {
-//       // console.log(isDefined(this.props.loader, '<div> Loading Note </div>'))
-//       return isDefined(this.props.loader, <div> Loading Note </div>);
-//     }
-//     return (
-//       <div
-//         onTouchStart={this.startPlayingNote}
-//         onTouchEnd={this.stopPlayingNote}
-//         onMouseDown={this.onClickStart}
-//         onMouseUp={this.stopPlayingNote}
-//         className={
-//           `${isDefined(this.props.className, '')} ${classnames({
-//             'ro-note-playing': this.state.isPlaying,
-//           }, {
-//             'ro-note-loading': this.state.isLoading,
-//           })}`
-//         }
-//       >
-//         {
-//           this.props.children || <div />
-//         }
-//       </div>
-//     );
-//   }
-// }
-// Note.defaultProps = {
-//   play: false,
-// };
-// export default Note;
