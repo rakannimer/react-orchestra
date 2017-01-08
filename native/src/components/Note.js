@@ -59,6 +59,8 @@ class Note extends React.Component {
   async startPlayingNote() {
     this.setState({ isPlaying: true });
     try {
+      // Need to create a new sound each time to avoid audio glitch on IOS when playing fast
+      this.sound = await loadSound(this.props.instrumentName, this.props.name);
       const buffer = await playNote(this.sound);
       return buffer;
     } catch (err) {
@@ -67,7 +69,7 @@ class Note extends React.Component {
     }
   }
   async stopPlayingNote() {
-    await stopPlayingNote(this.sound);
+    await stopPlayingNote(this.sound, this.props.delayPressOut);
     this.setState({ isPlaying: false });
   }
   render() {
@@ -78,7 +80,7 @@ class Note extends React.Component {
       <TouchableWithoutFeedback
         onPressIn={this.startPlayingNote}
         onPressOut={this.stopPlayingNote}
-        delayPressOut={isDefined(this.props.delayPressOut, 700)}
+        delayPressOut={this.props.delayPressOut}
         className={
           `${isDefined(this.props.className, '')} ${classnames({
             'ro-note-playing': this.state.isPlaying,
@@ -97,6 +99,7 @@ class Note extends React.Component {
 
 Note.defaultProps = {
   play: false,
+  delayPressOut: 1500,
 };
 export default Note;
 //
