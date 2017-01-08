@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import classnames from 'classnames';
 import {
   stopPlayingNote,
@@ -75,7 +75,7 @@ class Note extends React.Component {
       return isDefined(this.props.loader, <View><Text> Loading Note </Text></View>);
     }
     return (
-      <TouchableHighlight
+      <TouchableWithoutFeedback
         onPressIn={this.startPlayingNote}
         onPressOut={this.stopPlayingNote}
         delayPressOut={isDefined(this.props.delayPressOut, 700)}
@@ -88,9 +88,9 @@ class Note extends React.Component {
         }
       >
         {
-          this.props.children || <View />
+          <View>{this.props.children}</View> || <View />
         }
-      </TouchableHighlight>
+      </TouchableWithoutFeedback>
     );
   }
 }
