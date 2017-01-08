@@ -36,11 +36,10 @@ const createSoundFromPath = async localPath => new Promise((resolve, reject) => 
     }
   });
 });
-const playNote = sound =>
-  // console.warn(`playNote ${JSON.stringify(sound, 2, 2)}`);
+const playNote = (sound, volume = 1, loopCount = 0) =>
    new Promise((resolve, reject) => {
     // .setNumberOfLoops(5).play().setCurrentTime(0)
-     sound.setNumberOfLoops(1).play((success, err) => {
+     sound.setNumberOfLoops(loopCount).setVolume(volume).play((success, err) => {
        if (success) {
          resolve(sound);
        } else {
@@ -53,7 +52,7 @@ const playNote = sound =>
 const stopPlayingNote = async (sound, fadeOutDuration = 500) => {
   try {
     await delay(fadeOutDuration);
-    sound.stop();
+    sound.pause();
   } catch (err) {
     console.warn(`ERROR IN STOPPING NOTE ${err.message}`);
   }
