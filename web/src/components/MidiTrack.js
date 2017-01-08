@@ -80,7 +80,7 @@ export default class MidiTrack extends React.Component {
         key={i}
       >
         {
-          callIfExists(this.props.renderNote, instrumentName, noteName)
+          callIfExists(this.props.renderNote, instrumentName, noteName, i)
         }
       </Note>
     ));
