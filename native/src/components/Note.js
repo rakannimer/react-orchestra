@@ -39,12 +39,12 @@ class Note extends React.PureComponent {
       await this.stopPlayingNote();
     }
   }
-  shouldComponentUpdate(nextProps, nextState) {
-    // TODO: split into consts
-    // return true;
-    const shouldUpdate = this.state.isLoading || (nextProps.name !== this.props.name) || (nextProps.instrumentName !== this.props.instrumentName) || (nextState.isPlaying !== this.state.isPlaying) || (nextProps.play !== this.props.play) || this.state.isPlaying || this.state.isPlaying !== nextState.isPlaying;
-    return shouldUpdate;
-  }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   // TODO: split into consts
+  //   // return true;
+  //   const shouldUpdate = this.state.isLoading || (nextProps.name !== this.props.name) || (nextProps.instrumentName !== this.props.instrumentName) || (nextState.isPlaying !== this.state.isPlaying) || (nextProps.play !== this.props.play) || this.state.isPlaying || this.state.isPlaying !== nextState.isPlaying;
+  //   return shouldUpdate;
+  // }
   componentWillUnmount() {
     this.sound.release();
   }
