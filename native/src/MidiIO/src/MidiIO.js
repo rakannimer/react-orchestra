@@ -83,26 +83,32 @@ class MidiIO {
     };
     return metaObject;
   }
+  static indexMidiTrack(track) {
+    const indexedTrack = track.reduce(
+      (prev, current) => {
+        const currentIndex = `${current.type}_${current.subtype}`;
+        const updated = Object.assign({}, prev);
+        if (!updated[currentIndex]) {
+          updated[currentIndex] = [];
+        }
+        updated[currentIndex].push(current);
+        return updated;
+      },
+      {},
+    );
+    return indexedTrack;
+  }
   static getAllTracks(parsedMidi) {
     const tracks = parsedMidi.tracks.filter((track, i) => i >= 1);
 
     const indexedTracks = tracks.map((track, i) => {
-      const indexedTrack = track.reduce(
-        (prev, current) => {
-          const currentIndex = `${current.type}_${current.subtype}`;
-          const updated = Object.assign({}, prev);
-          if (!updated[currentIndex]) {
-            updated[currentIndex] = [];
-          }
-          updated[currentIndex].push(current);
-          return updated;
-        },
-        {},
-      );
+      let previousNote;
+      const indexedTrack = MidiIO.indexMidiTrack(track);
       const instrumentNumber = indexedTrack.channel_programChange[0].programNumber;
       const instrumentName = Object.keys(INSTRUMENT_MIDI_MAPPING).find(instrumentKey => (
         INSTRUMENT_MIDI_MAPPING[instrumentKey] === instrumentNumber),
       );
+
       return {
         controller: indexedTrack.channel_controller,
         programChange: indexedTrack.channel_programChange,
@@ -344,6 +350,7 @@ class MidiIO {
       const trackInstrumentName = meta.instrumentNames[i];
       const millisecondsPerTick = meta.millisecondsPerTick;
       let previousEndTime = 0;
+      let previousNote = {};
       return noteOffs.map((noteOff) => {
         const {
           noteNumber,
@@ -360,6 +367,14 @@ class MidiIO {
           previousEndTime,
           millisecondsPerTick,
         );
+        if (deltaTime === 0) {
+          const note = Object.assign({},
+            previousNote,
+            { noteNumber, noteName, instrumentName: noteInstrumentName },
+          );
+          previousNote = note;
+          return note;
+        }
         previousEndTime = endTimeInMS;
         const note = {
           noteNumber,
@@ -371,6 +386,7 @@ class MidiIO {
           deltaTime,
           msPerTick,
         };
+        previousNote = note;
         return note;
       });
     });
