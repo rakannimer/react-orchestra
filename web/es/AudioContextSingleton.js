@@ -1,0 +1,14 @@
+var getAudioContext = function getAudioContext() {
+  var AudioContext = window.AudioContext // Default
+  || window.webkitAudioContext // Safari and old versions of Chrome
+  || false;
+  if (!AudioContext) {
+    console.warn('Sorry but the WebAudio API is not supported on this browser. Please consider using Chrome or Safari for the best experience ');
+    return {};
+    // throw new Error('PLATFORM_NOT_SUPPORTED');
+  }
+  return new AudioContext();
+};
+
+var audioContext = getAudioContext();
+export default audioContext;
