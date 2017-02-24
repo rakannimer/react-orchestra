@@ -40,7 +40,7 @@ export default class MidiTrack extends React.PureComponent {
   }
   async onTimerCall(note) {
     const { noteName, instrumentName, durationInMS } = note;
-    const noteInstrumentName = this.props.instrumentName || instrumentName
+    const noteInstrumentName = this.props.instrumentName || instrumentName;
     const key = generateNoteKey(noteInstrumentName, noteName);
     this.setState({
       playingNotes: {
@@ -85,6 +85,7 @@ export default class MidiTrack extends React.PureComponent {
         key={i}
         onStartPlayingNote={this.props.onNotePlayed}
         onStopPlayingNote={this.props.onNoteStopPlaying}
+        delayPressOut={400}
       >
         {
           this.props.renderNote(instrumentName, sharpToBemol(noteName), i)

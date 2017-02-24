@@ -57,7 +57,9 @@ class Orchestra extends React.Component {
       <View>
         { this.props.children }
         {
-          this.state.tracks.map((track, i) => (
+          this.state.tracks
+          .filter((track, i) => this.props.selectedTracks.indexOf(i) !== -1)
+          .map((track, i) => (
             <MidiTrack
               onNotePlayed={this.props.onNotePlayed}
               onNoteStopPlaying={this.props.onNoteStopPlaying}
@@ -66,7 +68,7 @@ class Orchestra extends React.Component {
               trackIndex={i}
               key={i}
               renderNote={this.props.renderNote}
-              play={this.props.selectedTracks.indexOf(i) > -1 && this.props.play}
+              play={this.props.play}
               onInstrumentsReady={this.onInstrumentsReady}
               instrumentStyle={this.props.instrumentStyle}
               instrumentName={this.props.instrumentName || null}

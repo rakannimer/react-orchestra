@@ -42,7 +42,10 @@ class Note extends React.PureComponent {
   shouldComponentUpdate(nextProps, nextState) {
     // TODO: split into consts
     // return true;
-    const shouldUpdate = this.state.isLoading || (nextProps.name !== this.props.name) || (nextProps.instrumentName !== this.props.instrumentName) || (nextState.isPlaying !== this.state.isPlaying) || (nextProps.play !== this.props.play) || this.state.isPlaying || this.state.isPlaying !== nextState.isPlaying;
+    const isLoading = this.state.isLoading || nextState.isLoading;
+    const isPlaying = this.state.isPlaying !== nextState.isPlaying;
+    const isPlayingControlled = this.props.play !== nextProps.play;
+    const shouldUpdate = isLoading || isPlaying || isPlayingControlled; // this.state.isLoading || (nextProps.name !== this.props.name) || (nextProps.instrumentName !== this.props.instrumentName) || (nextState.isPlaying !== this.state.isPlaying) || (nextProps.play !== this.props.play) || this.state.isPlaying || this.state.isPlaying !== nextState.isPlaying;
     return shouldUpdate;
   }
   componentWillUnmount() {
