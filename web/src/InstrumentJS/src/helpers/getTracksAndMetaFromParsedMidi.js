@@ -1,5 +1,5 @@
 /* mod */
-import MidiIO from '../../MidiIO/src/MidiIO';
+import MidiIO from '../../../MidiIO/src/MidiIO';
 
 import Note from '../Note';
 
