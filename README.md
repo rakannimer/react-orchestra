@@ -117,7 +117,7 @@ react-native run-ios # or run-android
 
 ```javascript
 import React from 'react';
-import { Instrument, Note } from 'react-orchestra';
+import { Instrument, Note } from 'react-orchestra/web';
 // If you're using react-native then it's :
 // import { Instrument, Note } from 'react-orchestra/native';
 
@@ -176,7 +176,7 @@ Let's build an instrument that the user can play by clicking or tapping on notes
 
 ```javascript
 import React from 'react';
-import { Instrument, Note } from 'react-orchestra';
+import { Instrument, Note } from 'react-orchestra/web';
 // If you're using react-native then it's :
 // import { Instrument, Note } from 'react-orchestra/native';
 
@@ -224,7 +224,7 @@ Let's play Beethoven Moonlight's sonata.
 
 ```javascript
 import React from 'react';
-import { Orchestra } from 'react-orchestra';
+import { Orchestra } from 'react-orchestra/web';
 // If you're using react-native then it's :
 // import { Orchestra } from 'react-orchestra/native';
 const midiURL = 'https://s3-eu-west-1.amazonaws.com/ut-music-player/assets/midis/beet1track-medium-fast.mid';
@@ -278,7 +278,7 @@ Example : Render the C Major scale starting at the third octave over 2 octaves
 
 ```javascript
 import React from 'react';
-import { NoteFactory } from 'react-orchestra';
+import { NoteFactory } from 'react-orchestra/web';
 
 const renderNote = (instrumentName, noteName) => <div style={{ cursor: 'pointer' }}> I am a note : {instrumentName} {noteName} You can click me ! </div>;
 
