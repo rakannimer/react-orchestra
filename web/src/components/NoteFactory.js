@@ -26,7 +26,7 @@ class NoteFactory extends React.Component {
         {...this.props.noteProps}
       >
         {
-          callIfExists(this.props.renderNote, instrumentName, currentNoteName)
+          callIfExists(this.props.renderNote, instrumentName, currentNoteName, i)
         }
       </Note>
     ));

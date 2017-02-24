@@ -50,7 +50,7 @@ var NoteFactory = function (_React$Component) {
           startOctave: startOctave,
           octaveCount: octaveCount
         }, _this2.props.noteProps),
-        callIfExists(_this2.props.renderNote, instrumentName, currentNoteName)
+        callIfExists(_this2.props.renderNote, instrumentName, currentNoteName, i)
       );
     });
     return notesElements;
