@@ -1,8 +1,8 @@
 {
-  "name": "react-orchestra",
-  "version": "1.0.0",
+  "name": "react-orchestra-web",
+  "version": "1.1.0",
   "description": "react-orchestra React component",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "module": "src/index.js",
   "files": [
