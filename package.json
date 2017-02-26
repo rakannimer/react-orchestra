@@ -1,6 +1,6 @@
 {
   "name": "react-orchestra",
-  "version": "0.3.3-beta",
+  "version": "0.3.4",
   "description": "A toolbox to build interactive and smart instruments on the web and mobile.",
   "main": "web/lib/index.js",
   "scripts": {
@@ -40,7 +40,11 @@
     "soundfont-player": "^0.10.5"
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^13.0.0"
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2 || ^4.0.0",
+    "eslint-plugin-react": "^6.9.0"
   },
   "peerDependencies": {
     "react": "15.x",

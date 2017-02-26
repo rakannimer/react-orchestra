@@ -13,6 +13,8 @@ An HOC that gives functionality to a child UI element
  supported notes](/web/src/constants/NOTE_NAMES.js).
 * `instrumentName` (*String*): Instrument name from the MusyngKite soundfont. [Full list of supported instruments](/web/src/constants/INSTRUMENTS.js). This is optional if the <Note/> is a child of an <Instrument/>
 * `onNoteLoaded` (*Function*) A callback fired when note is loaded ( from network or cache ).
+* `onStopPlayingNote` (*Function*) A callback fired when a note is played.
+* `onStartPlayingNote` (*Function*) A callback fired when note stops being played.
 * `interactive` (*Boolean*) Determines if a component should listen to click/tap events.
 * `fadeOutDuration` (*Number*) Fadeout time in milliseconds of a note after it is released. Default is 600 ms.
 * `loader` (*ReactElement*) A loader to render while note is being loaded.

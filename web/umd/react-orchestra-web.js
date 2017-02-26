@@ -1818,28 +1818,30 @@ var Note = function (_React$Component) {
               // if (this.props.interactive === false) return;
               this.setState({ isPlaying: true });
               _context4.prev = 1;
-              _context4.next = 4;
+
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__utils_callIfExists__["a" /* default */])(this.props.onStartPlayingNote, this.props.instrumentName, this.props.name);
+              _context4.next = 5;
               return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["f" /* playNote */])(this.props.instrumentName, this.props.name);
 
-            case 4:
+            case 5:
               buffer = _context4.sent;
 
               this.playingBuffers.push(buffer);
-              _context4.next = 11;
+              _context4.next = 12;
               break;
 
-            case 8:
-              _context4.prev = 8;
+            case 9:
+              _context4.prev = 9;
               _context4.t0 = _context4['catch'](1);
 
               console.warn('Something wrong happened with the audio api while playing note ');
 
-            case 11:
+            case 12:
             case 'end':
               return _context4.stop();
           }
         }
-      }, _callee4, this, [[1, 8]]);
+      }, _callee4, this, [[1, 9]]);
     }));
 
     function startPlayingNote() {
@@ -1864,15 +1866,16 @@ var Note = function (_React$Component) {
               return _context5.abrupt('return');
 
             case 2:
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__utils_callIfExists__["a" /* default */])(this.props.onStopPlayingNote, this.props.instrumentName, this.props.name);
               buffer = this.playingBuffers.pop();
               fadeOutDuration = this.props.fadeOutDuration ? this.props.fadeOutDuration : 700;
-              _context5.next = 6;
+              _context5.next = 7;
               return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["g" /* stopPlayingNote */])(buffer, fadeOutDuration);
 
-            case 6:
+            case 7:
               this.setState({ isPlaying: false });
 
-            case 7:
+            case 8:
             case 'end':
               return _context5.stop();
           }
@@ -1895,7 +1898,7 @@ var Note = function (_React$Component) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 81
+            lineNumber: 83
           },
           __self: this
         },
@@ -1916,14 +1919,14 @@ var Note = function (_React$Component) {
         }),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 86
         },
         __self: this
       },
       this.props.children || __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 100
         },
         __self: this
       })
@@ -1943,7 +1946,7 @@ Note.defaultProps = {
   loader: __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 113
     },
     __self: this
   }),
@@ -1951,10 +1954,12 @@ Note.defaultProps = {
   children: __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 115
     },
     __self: this
-  })
+  }),
+  onStopPlayingNote: function onStopPlayingNote() {},
+  onStartPlayingNote: function onStartPlayingNote() {}
 };
 /* harmony default export */ __webpack_exports__["a"] = Note;
 

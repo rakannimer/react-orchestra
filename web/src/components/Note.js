@@ -60,6 +60,7 @@ class Note extends React.Component {
     // if (this.props.interactive === false) return;
     this.setState({ isPlaying: true });
     try {
+      callIfExists(this.props.onStartPlayingNote, this.props.instrumentName, this.props.name);
       const buffer = await playNote(this.props.instrumentName, this.props.name);
       this.playingBuffers.push(buffer);
     } catch (err) {
@@ -70,6 +71,7 @@ class Note extends React.Component {
     if (this.playingBuffers && this.playingBuffers.length === 0) {
       return;
     }
+    callIfExists(this.props.onStopPlayingNote, this.props.instrumentName, this.props.name);
     const buffer = this.playingBuffers.pop();
     const fadeOutDuration = this.props.fadeOutDuration ? this.props.fadeOutDuration : 700;
     await stopPlayingNote(buffer, fadeOutDuration);
@@ -111,5 +113,7 @@ Note.defaultProps = {
   loader: <div />,
   className: '',
   children: <div />,
+  onStopPlayingNote: () => {},
+  onStartPlayingNote: () => {},
 };
 export default Note;
