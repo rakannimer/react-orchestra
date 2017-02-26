@@ -8,8 +8,6 @@ dependencies:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
   cache_directories:
     - ~/.yarn-cache
-  override:
-    - cd web/ && yarn install
 
 test:
   override:
