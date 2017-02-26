@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+  },
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/prefer-default-export": "off",
+    "no-bitwise": "off",
+    "react/no-unused-prop-types": "off",
+    "react/prop-types": "off",
+    "react/prefer-stateless-function": "off",
+    "react/no-did-mount-set-state": "off",
+    "react/require-default-props": "off",
+    "no-return-await": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "no-nested-ternary": "off"
+  }
+}
