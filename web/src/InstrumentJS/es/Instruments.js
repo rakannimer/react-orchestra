@@ -5,7 +5,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 import SoundfontPlayer from 'soundfont-player';
 import Promise from 'bluebird';
 import _ from 'lodash';
-import MidiIO from '../MidiIO';
+import MidiIO from '../../MidiIO/src/MidiIO';
 import update from 'immutability-helper';
 import Note from './Note';
 import audioContext from './AudioContext';

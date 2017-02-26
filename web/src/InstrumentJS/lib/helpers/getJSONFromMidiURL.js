@@ -2,7 +2,7 @@
 
 exports.__esModule = true;
 
-var _MidiIO = require('../../MidiIO/src/MidiIO');
+var _MidiIO = require('../../../MidiIO/src/MidiIO');
 
 var _MidiIO2 = _interopRequireDefault(_MidiIO);
 

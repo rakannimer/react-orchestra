@@ -1,6 +1,6 @@
 {
   "name": "InstrumentJS",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Describe InstrumentJS here",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -11,7 +11,7 @@
     "test": "nwb test",
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server",
-    "docs": "./node_modules/.bin/jsdoc src/helpers/*.js src/Instruments.js src/Note.js ./README.md -d ./docs"
+    "docs": "jsdoc src/helpers/*.js src/Instruments.js src/Note.js ./README.md -d ./docs"
   },
   "dependencies": {
     "MidiIO": "git+https://a616ae14b9b11774d04278d924c162e3f9276e9b:x-oauth-basic@github.com/rakannimer/MidiIO.git",
@@ -34,7 +34,7 @@
     "eslint-plugin-react": "^6.4.1",
     "jsdoc": "^3.4.3",
     "karma-chrome-launcher": "^2.0.0",
-    "nwb": "0.12.x"
+    "nwb": "0.15.x"
   },
   "author": "",
   "homepage": "",
