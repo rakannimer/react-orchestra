@@ -1,5 +1,5 @@
 /* mod */
-import MidiIO from '../../MidiIO/src/MidiIO';
+import MidiIO from '../../../MidiIO/src/MidiIO';
 
 import Note from '../Note';
 
@@ -27,16 +27,15 @@ var getTracksAndMetaFromParsedMidi = function getTracksAndMetaFromParsedMidi(mid
     var millisecondsPerTick = meta.millisecondsPerTick;
     var previousEndTime = 0;
     return noteOffs.map(function (noteOff) {
-      var _MidiIO$noteOffEventT = MidiIO.noteOffEventToNote(noteOff, trackInstrumentName, previousEndTime, millisecondsPerTick);
-
-      var noteNumber = _MidiIO$noteOffEventT.noteNumber;
-      var noteName = _MidiIO$noteOffEventT.noteName;
-      var startTimeInMS = _MidiIO$noteOffEventT.startTimeInMS;
-      var durationInMS = _MidiIO$noteOffEventT.durationInMS;
-      var endTimeInMS = _MidiIO$noteOffEventT.endTimeInMS;
-      var noteInstrumentName = _MidiIO$noteOffEventT.noteInstrumentName;
-      var deltaTime = _MidiIO$noteOffEventT.deltaTime;
-      var msPerTick = _MidiIO$noteOffEventT.msPerTick;
+      var _MidiIO$noteOffEventT = MidiIO.noteOffEventToNote(noteOff, trackInstrumentName, previousEndTime, millisecondsPerTick),
+          noteNumber = _MidiIO$noteOffEventT.noteNumber,
+          noteName = _MidiIO$noteOffEventT.noteName,
+          startTimeInMS = _MidiIO$noteOffEventT.startTimeInMS,
+          durationInMS = _MidiIO$noteOffEventT.durationInMS,
+          endTimeInMS = _MidiIO$noteOffEventT.endTimeInMS,
+          noteInstrumentName = _MidiIO$noteOffEventT.noteInstrumentName,
+          deltaTime = _MidiIO$noteOffEventT.deltaTime,
+          msPerTick = _MidiIO$noteOffEventT.msPerTick;
 
       previousEndTime = endTimeInMS;
       var note = new Note({

@@ -2,7 +2,7 @@
 
 exports.__esModule = true;
 
-var _MidiIO = require('../../MidiIO/src/MidiIO');
+var _MidiIO = require('../../../MidiIO/src/MidiIO');
 
 var _MidiIO2 = _interopRequireDefault(_MidiIO);
 
@@ -39,16 +39,15 @@ var getTracksAndMetaFromParsedMidi = function getTracksAndMetaFromParsedMidi(mid
     var millisecondsPerTick = meta.millisecondsPerTick;
     var previousEndTime = 0;
     return noteOffs.map(function (noteOff) {
-      var _MidiIO$noteOffEventT = _MidiIO2.default.noteOffEventToNote(noteOff, trackInstrumentName, previousEndTime, millisecondsPerTick);
-
-      var noteNumber = _MidiIO$noteOffEventT.noteNumber;
-      var noteName = _MidiIO$noteOffEventT.noteName;
-      var startTimeInMS = _MidiIO$noteOffEventT.startTimeInMS;
-      var durationInMS = _MidiIO$noteOffEventT.durationInMS;
-      var endTimeInMS = _MidiIO$noteOffEventT.endTimeInMS;
-      var noteInstrumentName = _MidiIO$noteOffEventT.noteInstrumentName;
-      var deltaTime = _MidiIO$noteOffEventT.deltaTime;
-      var msPerTick = _MidiIO$noteOffEventT.msPerTick;
+      var _MidiIO$noteOffEventT = _MidiIO2.default.noteOffEventToNote(noteOff, trackInstrumentName, previousEndTime, millisecondsPerTick),
+          noteNumber = _MidiIO$noteOffEventT.noteNumber,
+          noteName = _MidiIO$noteOffEventT.noteName,
+          startTimeInMS = _MidiIO$noteOffEventT.startTimeInMS,
+          durationInMS = _MidiIO$noteOffEventT.durationInMS,
+          endTimeInMS = _MidiIO$noteOffEventT.endTimeInMS,
+          noteInstrumentName = _MidiIO$noteOffEventT.noteInstrumentName,
+          deltaTime = _MidiIO$noteOffEventT.deltaTime,
+          msPerTick = _MidiIO$noteOffEventT.msPerTick;
 
       previousEndTime = endTimeInMS;
       var note = new _Note2.default({

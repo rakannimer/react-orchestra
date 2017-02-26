@@ -1,5 +1,5 @@
 /*!
- * react-orchestra-web v1.3.1
+ * react-orchestra-web v1.3.2
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -349,7 +349,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_15__;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+var notes = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
 /* harmony default export */ __webpack_exports__["a"] = notes;
 
 /***/ }),

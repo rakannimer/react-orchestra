@@ -1,6 +1,6 @@
 /* mod */
 import update from 'immutability-helper';
-import MidiIO from '../../MidiIO/src/MidiIO';
+import MidiIO from '../../../MidiIO/src/MidiIO';
 
 import Note from '../Note';
 
@@ -44,16 +44,15 @@ var updateTempo = function updateTempo(tracksAndMeta, BPM) {
       var _MidiIO$noteOffEventT = MidiIO.noteOffEventToNote({
         deltaTime: note.payload.deltaTime,
         noteNumber: note.payload.noteNumber
-      }, note.payload.instrumentName, previousEndTime, newMSPerTick);
-
-      var noteNumber = _MidiIO$noteOffEventT.noteNumber;
-      var noteName = _MidiIO$noteOffEventT.noteName;
-      var startTimeInMS = _MidiIO$noteOffEventT.startTimeInMS;
-      var durationInMS = _MidiIO$noteOffEventT.durationInMS;
-      var endTimeInMS = _MidiIO$noteOffEventT.endTimeInMS;
-      var noteInstrumentName = _MidiIO$noteOffEventT.noteInstrumentName;
-      var deltaTime = _MidiIO$noteOffEventT.deltaTime;
-      var msPerTick = _MidiIO$noteOffEventT.msPerTick;
+      }, note.payload.instrumentName, previousEndTime, newMSPerTick),
+          noteNumber = _MidiIO$noteOffEventT.noteNumber,
+          noteName = _MidiIO$noteOffEventT.noteName,
+          startTimeInMS = _MidiIO$noteOffEventT.startTimeInMS,
+          durationInMS = _MidiIO$noteOffEventT.durationInMS,
+          endTimeInMS = _MidiIO$noteOffEventT.endTimeInMS,
+          noteInstrumentName = _MidiIO$noteOffEventT.noteInstrumentName,
+          deltaTime = _MidiIO$noteOffEventT.deltaTime,
+          msPerTick = _MidiIO$noteOffEventT.msPerTick;
 
       previousEndTime = endTimeInMS;
       var updatedNote = new Note({

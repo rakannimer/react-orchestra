@@ -1,5 +1,5 @@
 /* mod */
-import MidiIO from '../../MidiIO/src/MidiIO';
+import MidiIO from '../../../MidiIO/src/MidiIO';
 
 /**
  * Download midi from url and parse it into JSON {meta, musicTracks}.

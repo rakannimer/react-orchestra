@@ -26,7 +26,7 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _MidiIO = require('../MidiIO/src/MidiIO');
+var _MidiIO = require('../../MidiIO/src/MidiIO');
 
 var _MidiIO2 = _interopRequireDefault(_MidiIO);
 
