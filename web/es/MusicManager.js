@@ -279,3 +279,17 @@ var midiURLToMetaAndTracks = function () {
 }();
 
 export { generateNoteKey, midiURLToMetaAndTracks, playSound, playNote, sharpToBemol, instrumentNameToRemotePath, stopPlayingNote, getNoteBlob, getSoundFromRemote, loadSound, delay };
+
+export default {
+  generateNoteKey: generateNoteKey,
+  midiURLToMetaAndTracks: midiURLToMetaAndTracks,
+  playSound: playSound,
+  playNote: playNote,
+  sharpToBemol: sharpToBemol,
+  instrumentNameToRemotePath: instrumentNameToRemotePath,
+  stopPlayingNote: stopPlayingNote,
+  getNoteBlob: getNoteBlob,
+  getSoundFromRemote: getSoundFromRemote,
+  loadSound: loadSound,
+  delay: delay
+};

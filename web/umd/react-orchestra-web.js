@@ -1,5 +1,5 @@
 /*!
- * react-orchestra-web v1.3.0
+ * react-orchestra-web v1.3.1
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -92,7 +92,7 @@ if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 /***/ (function(module, exports, __webpack_require__) {
 
 var store      = __webpack_require__(54)('wks')
-  , uid        = __webpack_require__(36)
+  , uid        = __webpack_require__(37)
   , Symbol     = __webpack_require__(2).Symbol
   , USE_SYMBOL = typeof Symbol == 'function';
 
@@ -306,7 +306,7 @@ module.exports = function(it, key){
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
 var IObject = __webpack_require__(48)
-  , defined = __webpack_require__(30);
+  , defined = __webpack_require__(31);
 module.exports = function(it){
   return IObject(defined(it));
 };
@@ -499,7 +499,7 @@ module.exports = __webpack_require__(187);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_helpers_classCallCheck__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_helpers_classCallCheck___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_helpers_classCallCheck__);
@@ -570,7 +570,7 @@ var Note = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_keys__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_keys___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_keys__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_array_from__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_array_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_array_from__);
@@ -1080,257 +1080,13 @@ module.exports = function(it, tag, stat){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
-var defined = __webpack_require__(30);
+var defined = __webpack_require__(31);
 module.exports = function(it){
   return Object(defined(it));
 };
 
 /***/ }),
 /* 30 */
-/***/ (function(module, exports) {
-
-// 7.2.1 RequireObjectCoercible(argument)
-module.exports = function(it){
-  if(it == undefined)throw TypeError("Can't call method on  " + it);
-  return it;
-};
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var ctx         = __webpack_require__(8)
-  , call        = __webpack_require__(86)
-  , isArrayIter = __webpack_require__(84)
-  , anObject    = __webpack_require__(7)
-  , toLength    = __webpack_require__(35)
-  , getIterFn   = __webpack_require__(95)
-  , BREAK       = {}
-  , RETURN      = {};
-var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
-  var iterFn = ITERATOR ? function(){ return iterable; } : getIterFn(iterable)
-    , f      = ctx(fn, that, entries ? 2 : 1)
-    , index  = 0
-    , length, step, iterator, result;
-  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
-  // fast case for arrays with default iterator
-  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
-    result = entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
-    if(result === BREAK || result === RETURN)return result;
-  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
-    result = call(iterator, f, step.value, entries);
-    if(result === BREAK || result === RETURN)return result;
-  }
-};
-exports.BREAK  = BREAK;
-exports.RETURN = RETURN;
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports) {
-
-module.exports = true;
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject    = __webpack_require__(7)
-  , dPs         = __webpack_require__(153)
-  , enumBugKeys = __webpack_require__(47)
-  , IE_PROTO    = __webpack_require__(53)('IE_PROTO')
-  , Empty       = function(){ /* empty */ }
-  , PROTOTYPE   = 'prototype';
-
-// Create object with fake `null` prototype: use iframe Object with cleared prototype
-var createDict = function(){
-  // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(46)('iframe')
-    , i      = enumBugKeys.length
-    , lt     = '<'
-    , gt     = '>'
-    , iframeDocument;
-  iframe.style.display = 'none';
-  __webpack_require__(82).appendChild(iframe);
-  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
-  // createDict = iframe.contentWindow.Object;
-  // html.removeChild(iframe);
-  iframeDocument = iframe.contentWindow.document;
-  iframeDocument.open();
-  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
-  iframeDocument.close();
-  createDict = iframeDocument.F;
-  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
-  return createDict();
-};
-
-module.exports = Object.create || function create(O, Properties){
-  var result;
-  if(O !== null){
-    Empty[PROTOTYPE] = anObject(O);
-    result = new Empty;
-    Empty[PROTOTYPE] = null;
-    // add "__proto__" for Object.getPrototypeOf polyfill
-    result[IE_PROTO] = O;
-  } else result = createDict();
-  return Properties === undefined ? result : dPs(result, Properties);
-};
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports) {
-
-exports.f = {}.propertyIsEnumerable;
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.1.15 ToLength
-var toInteger = __webpack_require__(55)
-  , min       = Math.min;
-module.exports = function(it){
-  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
-};
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports) {
-
-var id = 0
-  , px = Math.random();
-module.exports = function(key){
-  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-};
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $at  = __webpack_require__(159)(true);
-
-// 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(49)(String, 'String', function(iterated){
-  this._t = String(iterated); // target
-  this._i = 0;                // next index
-// 21.1.5.2.1 %StringIteratorPrototype%.next()
-}, function(){
-  var O     = this._t
-    , index = this._i
-    , point;
-  if(index >= O.length)return {value: undefined, done: true};
-  point = $at(O, index);
-  this._i += point.length;
-  return {value: point, done: false};
-});
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(129), __esModule: true };
-
-/***/ }),
-/* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var scales = {
-  aeolian: {
-    name: 'Minor', sequence: [0, 2, 3, 5, 7, 8, 10]
-  },
-  ionian: {
-    name: 'Major', sequence: [0, 2, 4, 5, 7, 9, 11]
-  },
-  dorian: {
-    name: 'Dorian', sequence: [0, 2, 3, 5, 7, 9, 10]
-  },
-  phrygian: {
-    name: 'Phrygian', sequence: [0, 1, 3, 5, 7, 8, 10]
-  },
-  lydian: {
-    name: 'Lydian', sequence: [0, 2, 4, 6, 7, 9, 11]
-  },
-  mixolydian: {
-    name: 'Mixolydian', sequence: [0, 2, 4, 5, 7, 9, 10]
-  },
-  locrian: {
-    name: 'Locrian', sequence: [0, 1, 3, 5, 6, 8, 10]
-  },
-  chromatic: {
-    name: 'Chromatic', sequence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-  },
-  acoustic: {
-    name: 'Acoustic', sequence: [0, 2, 4, 6, 7, 9, 10]
-  },
-  algerian: {
-    name: 'Algerian', sequence: [0, 2, 3, 5, 6, 7, 9, 10]
-  },
-  altered: {
-    name: 'Altered', sequence: [0, 1, 3, 4, 6, 8, 10]
-  },
-  pentatonic: {
-    name: 'Minoric', sequence: [0, 2, 4, 7, 9]
-  },
-  wholetone: {
-    name: 'Wholetone', sequence: [0, 2, 4, 6, 8, 10]
-  },
-  blues: {
-    name: 'Blues', sequence: [0, 3, 5, 6, 7, 10]
-  },
-  minorBlues: {
-    name: 'Minor Blues', sequence: [0, 2, 3, 5, 6, 7, 8, 10]
-  },
-  majorBlues: {
-    name: 'Major Blues', sequence: [0, 2, 3, 4, 5, 6, 7, 9, 10]
-  },
-  harmonicMinor: {
-    name: 'Harmonic Minor', sequence: [0, 2, 3, 5, 7, 8, 11]
-  },
-  melodicMinorAsc: {
-    name: 'Melodic Minor Asc', sequence: [0, 2, 3, 5, 7, 9, 11]
-  },
-  melodicMinorDesc: {
-    name: 'Melodic Minor Desc', sequence: [0, 2, 3, 5, 7, 8, 10]
-  },
-  enigmatic: {
-    name: 'Enigmatic', sequence: [0, 1, 4, 6, 8, 10, 11]
-  },
-  doubleHarmonic: {
-    name: 'Double Harmonic', sequence: [0, 1, 4, 5, 7, 8, 11]
-  },
-  persian: {
-    name: 'Persian', sequence: [0, 1, 4, 5, 6, 8, 11]
-  },
-  arabian: {
-    name: 'Arabian', sequence: [0, 2, 4, 5, 6, 8, 10]
-  },
-  japanese: {
-    name: 'Japanese', sequence: [0, 1, 5, 7, 8]
-  },
-  egyptian: {
-    name: 'Egyptian', sequence: [0, 2, 5, 7, 10]
-  },
-  hirajoshi: {
-    name: 'Hirajoshi', sequence: [0, 2, 3, 7, 8]
-  },
-  minorPentatonic: {
-    name: 'Minor Pentatonic', sequence: [0, 3, 5, 7, 10]
-  },
-  majorPentatonic: {
-    name: 'Major Pentatonic', sequence: [0, 2, 4, 7, 9]
-  }
-
-};
-
-/* harmony default export */ __webpack_exports__["a"] = scales;
-
-/***/ }),
-/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1343,17 +1099,17 @@ var scales = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__AudioContextSingleton__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__MidiIO_src___ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__stores___ = __webpack_require__(123);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return generateNoteKey; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return midiURLToMetaAndTracks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return generateNoteKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return midiURLToMetaAndTracks; });
 /* unused harmony export playSound */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return playNote; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return sharpToBemol; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return playNote; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return sharpToBemol; });
 /* unused harmony export instrumentNameToRemotePath */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return stopPlayingNote; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return stopPlayingNote; });
 /* unused harmony export getNoteBlob */
 /* unused harmony export getSoundFromRemote */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return loadSound; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return delay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return loadSound; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return delay; });
 
 
 
@@ -1636,6 +1392,264 @@ var midiURLToMetaAndTracks = function () {
 
 
 
+/* harmony default export */ __webpack_exports__["a"] = {
+  generateNoteKey: generateNoteKey,
+  midiURLToMetaAndTracks: midiURLToMetaAndTracks,
+  playSound: playSound,
+  playNote: playNote,
+  sharpToBemol: sharpToBemol,
+  instrumentNameToRemotePath: instrumentNameToRemotePath,
+  stopPlayingNote: stopPlayingNote,
+  getNoteBlob: getNoteBlob,
+  getSoundFromRemote: getSoundFromRemote,
+  loadSound: loadSound,
+  delay: delay
+};
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+// 7.2.1 RequireObjectCoercible(argument)
+module.exports = function(it){
+  if(it == undefined)throw TypeError("Can't call method on  " + it);
+  return it;
+};
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ctx         = __webpack_require__(8)
+  , call        = __webpack_require__(86)
+  , isArrayIter = __webpack_require__(84)
+  , anObject    = __webpack_require__(7)
+  , toLength    = __webpack_require__(36)
+  , getIterFn   = __webpack_require__(95)
+  , BREAK       = {}
+  , RETURN      = {};
+var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
+  var iterFn = ITERATOR ? function(){ return iterable; } : getIterFn(iterable)
+    , f      = ctx(fn, that, entries ? 2 : 1)
+    , index  = 0
+    , length, step, iterator, result;
+  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
+  // fast case for arrays with default iterator
+  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
+    result = entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
+    if(result === BREAK || result === RETURN)return result;
+  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
+    result = call(iterator, f, step.value, entries);
+    if(result === BREAK || result === RETURN)return result;
+  }
+};
+exports.BREAK  = BREAK;
+exports.RETURN = RETURN;
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports) {
+
+module.exports = true;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+var anObject    = __webpack_require__(7)
+  , dPs         = __webpack_require__(153)
+  , enumBugKeys = __webpack_require__(47)
+  , IE_PROTO    = __webpack_require__(53)('IE_PROTO')
+  , Empty       = function(){ /* empty */ }
+  , PROTOTYPE   = 'prototype';
+
+// Create object with fake `null` prototype: use iframe Object with cleared prototype
+var createDict = function(){
+  // Thrash, waste and sodomy: IE GC bug
+  var iframe = __webpack_require__(46)('iframe')
+    , i      = enumBugKeys.length
+    , lt     = '<'
+    , gt     = '>'
+    , iframeDocument;
+  iframe.style.display = 'none';
+  __webpack_require__(82).appendChild(iframe);
+  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
+  // createDict = iframe.contentWindow.Object;
+  // html.removeChild(iframe);
+  iframeDocument = iframe.contentWindow.document;
+  iframeDocument.open();
+  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
+  iframeDocument.close();
+  createDict = iframeDocument.F;
+  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
+  return createDict();
+};
+
+module.exports = Object.create || function create(O, Properties){
+  var result;
+  if(O !== null){
+    Empty[PROTOTYPE] = anObject(O);
+    result = new Empty;
+    Empty[PROTOTYPE] = null;
+    // add "__proto__" for Object.getPrototypeOf polyfill
+    result[IE_PROTO] = O;
+  } else result = createDict();
+  return Properties === undefined ? result : dPs(result, Properties);
+};
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+exports.f = {}.propertyIsEnumerable;
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.15 ToLength
+var toInteger = __webpack_require__(55)
+  , min       = Math.min;
+module.exports = function(it){
+  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+};
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports) {
+
+var id = 0
+  , px = Math.random();
+module.exports = function(key){
+  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+};
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $at  = __webpack_require__(159)(true);
+
+// 21.1.3.27 String.prototype[@@iterator]()
+__webpack_require__(49)(String, 'String', function(iterated){
+  this._t = String(iterated); // target
+  this._i = 0;                // next index
+// 21.1.5.2.1 %StringIteratorPrototype%.next()
+}, function(){
+  var O     = this._t
+    , index = this._i
+    , point;
+  if(index >= O.length)return {value: undefined, done: true};
+  point = $at(O, index);
+  this._i += point.length;
+  return {value: point, done: false};
+});
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(129), __esModule: true };
+
+/***/ }),
+/* 40 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var scales = {
+  aeolian: {
+    name: 'Minor', sequence: [0, 2, 3, 5, 7, 8, 10]
+  },
+  ionian: {
+    name: 'Major', sequence: [0, 2, 4, 5, 7, 9, 11]
+  },
+  dorian: {
+    name: 'Dorian', sequence: [0, 2, 3, 5, 7, 9, 10]
+  },
+  phrygian: {
+    name: 'Phrygian', sequence: [0, 1, 3, 5, 7, 8, 10]
+  },
+  lydian: {
+    name: 'Lydian', sequence: [0, 2, 4, 6, 7, 9, 11]
+  },
+  mixolydian: {
+    name: 'Mixolydian', sequence: [0, 2, 4, 5, 7, 9, 10]
+  },
+  locrian: {
+    name: 'Locrian', sequence: [0, 1, 3, 5, 6, 8, 10]
+  },
+  chromatic: {
+    name: 'Chromatic', sequence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  },
+  acoustic: {
+    name: 'Acoustic', sequence: [0, 2, 4, 6, 7, 9, 10]
+  },
+  algerian: {
+    name: 'Algerian', sequence: [0, 2, 3, 5, 6, 7, 9, 10]
+  },
+  altered: {
+    name: 'Altered', sequence: [0, 1, 3, 4, 6, 8, 10]
+  },
+  pentatonic: {
+    name: 'Minoric', sequence: [0, 2, 4, 7, 9]
+  },
+  wholetone: {
+    name: 'Wholetone', sequence: [0, 2, 4, 6, 8, 10]
+  },
+  blues: {
+    name: 'Blues', sequence: [0, 3, 5, 6, 7, 10]
+  },
+  minorBlues: {
+    name: 'Minor Blues', sequence: [0, 2, 3, 5, 6, 7, 8, 10]
+  },
+  majorBlues: {
+    name: 'Major Blues', sequence: [0, 2, 3, 4, 5, 6, 7, 9, 10]
+  },
+  harmonicMinor: {
+    name: 'Harmonic Minor', sequence: [0, 2, 3, 5, 7, 8, 11]
+  },
+  melodicMinorAsc: {
+    name: 'Melodic Minor Asc', sequence: [0, 2, 3, 5, 7, 9, 11]
+  },
+  melodicMinorDesc: {
+    name: 'Melodic Minor Desc', sequence: [0, 2, 3, 5, 7, 8, 10]
+  },
+  enigmatic: {
+    name: 'Enigmatic', sequence: [0, 1, 4, 6, 8, 10, 11]
+  },
+  doubleHarmonic: {
+    name: 'Double Harmonic', sequence: [0, 1, 4, 5, 7, 8, 11]
+  },
+  persian: {
+    name: 'Persian', sequence: [0, 1, 4, 5, 6, 8, 11]
+  },
+  arabian: {
+    name: 'Arabian', sequence: [0, 2, 4, 5, 6, 8, 10]
+  },
+  japanese: {
+    name: 'Japanese', sequence: [0, 1, 5, 7, 8]
+  },
+  egyptian: {
+    name: 'Egyptian', sequence: [0, 2, 5, 7, 10]
+  },
+  hirajoshi: {
+    name: 'Hirajoshi', sequence: [0, 2, 3, 7, 8]
+  },
+  minorPentatonic: {
+    name: 'Minor Pentatonic', sequence: [0, 3, 5, 7, 10]
+  },
+  majorPentatonic: {
+    name: 'Major Pentatonic', sequence: [0, 2, 4, 7, 9]
+  }
+
+};
+
+/* harmony default export */ __webpack_exports__["a"] = scales;
+
 /***/ }),
 /* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1655,7 +1669,7 @@ var midiURLToMetaAndTracks = function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_classnames__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_classnames__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MusicManager__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MusicManager__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_callIfExists__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_isDefined__ = __webpack_require__(42);
 
@@ -1776,7 +1790,7 @@ var Note = function (_React$Component) {
               this.setState({ isLoading: true });
               _context3.prev = 1;
               _context3.next = 4;
-              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["e" /* loadSound */])(this.props.instrumentName, this.props.name);
+              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["f" /* loadSound */])(this.props.instrumentName, this.props.name);
 
             case 4:
               _context3.next = 10;
@@ -1821,7 +1835,7 @@ var Note = function (_React$Component) {
 
               __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__utils_callIfExists__["a" /* default */])(this.props.onStartPlayingNote, this.props.instrumentName, this.props.name);
               _context4.next = 5;
-              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["f" /* playNote */])(this.props.instrumentName, this.props.name);
+              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["g" /* playNote */])(this.props.instrumentName, this.props.name);
 
             case 5:
               buffer = _context4.sent;
@@ -1870,7 +1884,7 @@ var Note = function (_React$Component) {
               buffer = this.playingBuffers.pop();
               fadeOutDuration = this.props.fadeOutDuration ? this.props.fadeOutDuration : 700;
               _context5.next = 7;
-              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["g" /* stopPlayingNote */])(buffer, fadeOutDuration);
+              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["h" /* stopPlayingNote */])(buffer, fadeOutDuration);
 
             case 7:
               this.setState({ isPlaying: false });
@@ -2058,7 +2072,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 
 "use strict";
 
-var LIBRARY        = __webpack_require__(32)
+var LIBRARY        = __webpack_require__(33)
   , $export        = __webpack_require__(3)
   , redefine       = __webpack_require__(92)
   , hide           = __webpack_require__(9)
@@ -2132,7 +2146,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 /* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var META     = __webpack_require__(36)('meta')
+var META     = __webpack_require__(37)('meta')
   , isObject = __webpack_require__(10)
   , has      = __webpack_require__(12)
   , setDesc  = __webpack_require__(4).f
@@ -2209,7 +2223,7 @@ module.exports = function(target, src, safe){
 /***/ (function(module, exports, __webpack_require__) {
 
 var shared = __webpack_require__(54)('keys')
-  , uid    = __webpack_require__(36);
+  , uid    = __webpack_require__(37);
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
@@ -2259,7 +2273,7 @@ module.exports = function(it, S){
 
 var global         = __webpack_require__(2)
   , core           = __webpack_require__(0)
-  , LIBRARY        = __webpack_require__(32)
+  , LIBRARY        = __webpack_require__(33)
   , wksExt         = __webpack_require__(58)
   , defineProperty = __webpack_require__(4).f;
 module.exports = function(name){
@@ -19422,7 +19436,7 @@ module.exports = { "default": __webpack_require__(134), __esModule: true };
 
 exports.__esModule = true;
 
-var _assign = __webpack_require__(38);
+var _assign = __webpack_require__(39);
 
 var _assign2 = _interopRequireDefault(_assign);
 
@@ -22059,7 +22073,7 @@ module.exports = function(done, value){
 /* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pIE            = __webpack_require__(34)
+var pIE            = __webpack_require__(35)
   , createDesc     = __webpack_require__(27)
   , toIObject      = __webpack_require__(13)
   , toPrimitive    = __webpack_require__(56)
@@ -22449,18 +22463,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_NoteFactory__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_KeyBinding__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__InstrumentJS_src___ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__MusicManager__ = __webpack_require__(30);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Instrument", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Instrument__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Note", function() { return __WEBPACK_IMPORTED_MODULE_1__components_Note__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Orchestra", function() { return __WEBPACK_IMPORTED_MODULE_2__components_Orchestra__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "NoteFactory", function() { return __WEBPACK_IMPORTED_MODULE_3__components_NoteFactory__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "KeyBinding", function() { return __WEBPACK_IMPORTED_MODULE_4__components_KeyBinding__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "InstrumentHelpers", function() { return __WEBPACK_IMPORTED_MODULE_5__InstrumentJS_src___["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MusicManager", function() { return __WEBPACK_IMPORTED_MODULE_6__MusicManager__["a"]; });
 
 
 
 
 
 // import NoteHelpers from './utils/NoteHelpers';
+
 
 
 window.isTouchDevice = 'ontouchstart' in document.documentElement;
@@ -22471,7 +22488,8 @@ window.isTouchDevice = 'ontouchstart' in document.documentElement;
   Orchestra: __WEBPACK_IMPORTED_MODULE_2__components_Orchestra__["a" /* default */],
   NoteFactory: __WEBPACK_IMPORTED_MODULE_3__components_NoteFactory__["a" /* default */],
   KeyBinding: __WEBPACK_IMPORTED_MODULE_4__components_KeyBinding__["a" /* default */],
-  InstrumentHelpers: __WEBPACK_IMPORTED_MODULE_5__InstrumentJS_src___["a" /* InstrumentHelpers */]
+  InstrumentHelpers: __WEBPACK_IMPORTED_MODULE_5__InstrumentJS_src___["a" /* InstrumentHelpers */],
+  MusicManager: __WEBPACK_IMPORTED_MODULE_6__MusicManager__["a" /* default */]
 };
 
 
@@ -22913,7 +22931,7 @@ var audioContext = getAudioContext();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Note__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__AudioContext__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__constants_NOTES__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__constants_SCALES__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__constants_SCALES__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__constants_CHORDS__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__helpers___ = __webpack_require__(76);
 
@@ -23333,7 +23351,7 @@ var getNoteNamesFromChordName = function getNoteNamesFromChordName(firstNoteName
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__reOrderNotes__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__isInHigherOctave__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants_SCALES__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants_SCALES__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants_NOTES__ = __webpack_require__(16);
 /* mod */
 
@@ -23397,7 +23415,7 @@ var getScaleNotes = function getScaleNotes(note, scale, startOctave, count) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_keys__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_keys___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_keys__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants_SCALES__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants_SCALES__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__getUniqueNoteNamesNoOctave__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__getIntervalPermutationsFromNoteNames__ = __webpack_require__(71);
 
@@ -24066,7 +24084,7 @@ KeyBinding.propTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_regenerator__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_core_js_object_assign__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_helpers_asyncToGenerator__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_helpers_asyncToGenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Users_rn_Code_github_active_repos_music_js_react_orchestra_web_node_modules_nwb_node_modules_babel_runtime_helpers_asyncToGenerator__);
@@ -24080,7 +24098,7 @@ KeyBinding.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MidiIO_src___ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Note__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__MusicManager__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__MusicManager__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_callIfExists__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_isDefined__ = __webpack_require__(42);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MidiTrack; });
@@ -24149,7 +24167,7 @@ var MidiTrack = function (_React$Component) {
             case 0:
               // if (!this.props.play) return;
               noteName = note.noteName, instrumentName = note.instrumentName, durationInMS = note.durationInMS;
-              key = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__MusicManager__["b" /* generateNoteKey */])(instrumentName, noteName);
+              key = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__MusicManager__["c" /* generateNoteKey */])(instrumentName, noteName);
 
               this.setState({
                 playingNotes: (_playingNotes = {}, _playingNotes[key] = true, _playingNotes)
@@ -24159,7 +24177,7 @@ var MidiTrack = function (_React$Component) {
 
               delete updatedPlayingNotes[key];
               _context.next = 8;
-              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__MusicManager__["c" /* delay */])(durationInMS);
+              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__MusicManager__["d" /* delay */])(durationInMS);
 
             case 8:
               this.setState({ playingNotes: updatedPlayingNotes });
@@ -24230,8 +24248,8 @@ var MidiTrack = function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_6_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_8__Note__["a" /* default */],
         {
-          play: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__MusicManager__["b" /* generateNoteKey */])(instrumentName, noteName) in __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11__utils_isDefined__["a" /* default */])(_this2.state.playingNotes, {}),
-          name: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__MusicManager__["d" /* sharpToBemol */])(noteName),
+          play: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__MusicManager__["c" /* generateNoteKey */])(instrumentName, noteName) in __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11__utils_isDefined__["a" /* default */])(_this2.state.playingNotes, {}),
+          name: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__MusicManager__["e" /* sharpToBemol */])(noteName),
           instrumentName: instrumentName,
           key: i,
           __source: {
@@ -24405,7 +24423,7 @@ var NoteFactory = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__MidiTrack__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MusicManager__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MusicManager__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_isDefined__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_callIfExists__ = __webpack_require__(17);
 
@@ -24434,7 +24452,7 @@ var parseMidi = function () {
           case 0:
             midiURL = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__utils_isDefined__["a" /* default */])(props.midiURL, '');
             _context.next = 3;
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["a" /* midiURLToMetaAndTracks */])(midiURL);
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["b" /* midiURLToMetaAndTracks */])(midiURL);
 
           case 3:
             metaAndTracks = _context.sent;
@@ -35353,7 +35371,7 @@ module.exports = ret;
 /* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(37);
+__webpack_require__(38);
 __webpack_require__(161);
 module.exports = __webpack_require__(0).Array.from;
 
@@ -35403,7 +35421,7 @@ module.exports = __webpack_require__(0).Object.setPrototypeOf;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(59);
-__webpack_require__(37);
+__webpack_require__(38);
 __webpack_require__(60);
 __webpack_require__(167);
 module.exports = __webpack_require__(0).Promise;
@@ -35413,7 +35431,7 @@ module.exports = __webpack_require__(0).Promise;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(59);
-__webpack_require__(37);
+__webpack_require__(38);
 __webpack_require__(60);
 __webpack_require__(168);
 __webpack_require__(170);
@@ -35433,7 +35451,7 @@ module.exports = __webpack_require__(0).Symbol;
 /* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(37);
+__webpack_require__(38);
 __webpack_require__(60);
 module.exports = __webpack_require__(58).f('iterator');
 
@@ -35447,7 +35465,7 @@ module.exports = function(){ /* empty */ };
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var forOf = __webpack_require__(31);
+var forOf = __webpack_require__(32);
 
 module.exports = function(iter, ITERATOR){
   var result = [];
@@ -35463,7 +35481,7 @@ module.exports = function(iter, ITERATOR){
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(13)
-  , toLength  = __webpack_require__(35)
+  , toLength  = __webpack_require__(36)
   , toIndex   = __webpack_require__(160);
 module.exports = function(IS_INCLUDES){
   return function($this, el, fromIndex){
@@ -35496,7 +35514,7 @@ module.exports = function(IS_INCLUDES){
 var ctx      = __webpack_require__(8)
   , IObject  = __webpack_require__(48)
   , toObject = __webpack_require__(29)
-  , toLength = __webpack_require__(35)
+  , toLength = __webpack_require__(36)
   , asc      = __webpack_require__(142);
 module.exports = function(TYPE, $create){
   var IS_MAP        = TYPE == 1
@@ -35570,12 +35588,12 @@ module.exports = function(original, length){
 "use strict";
 
 var dP          = __webpack_require__(4).f
-  , create      = __webpack_require__(33)
+  , create      = __webpack_require__(34)
   , redefineAll = __webpack_require__(52)
   , ctx         = __webpack_require__(8)
   , anInstance  = __webpack_require__(44)
-  , defined     = __webpack_require__(30)
-  , forOf       = __webpack_require__(31)
+  , defined     = __webpack_require__(31)
+  , forOf       = __webpack_require__(32)
   , $iterDefine = __webpack_require__(49)
   , step        = __webpack_require__(88)
   , setSpecies  = __webpack_require__(93)
@@ -35737,7 +35755,7 @@ var global         = __webpack_require__(2)
   , fails          = __webpack_require__(11)
   , hide           = __webpack_require__(9)
   , redefineAll    = __webpack_require__(52)
-  , forOf          = __webpack_require__(31)
+  , forOf          = __webpack_require__(32)
   , anInstance     = __webpack_require__(44)
   , isObject       = __webpack_require__(10)
   , setToStringTag = __webpack_require__(28)
@@ -35811,7 +35829,7 @@ module.exports = function(object, index, value){
 // all enumerable object keys, includes symbols
 var getKeys = __webpack_require__(18)
   , gOPS    = __webpack_require__(51)
-  , pIE     = __webpack_require__(34);
+  , pIE     = __webpack_require__(35);
 module.exports = function(it){
   var result     = getKeys(it)
     , getSymbols = gOPS.f;
@@ -35851,7 +35869,7 @@ module.exports = function(fn, args, that){
 
 "use strict";
 
-var create         = __webpack_require__(33)
+var create         = __webpack_require__(34)
   , descriptor     = __webpack_require__(27)
   , setToStringTag = __webpack_require__(28)
   , IteratorPrototype = {};
@@ -35961,7 +35979,7 @@ module.exports = function(){
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys  = __webpack_require__(18)
   , gOPS     = __webpack_require__(51)
-  , pIE      = __webpack_require__(34)
+  , pIE      = __webpack_require__(35)
   , toObject = __webpack_require__(29)
   , IObject  = __webpack_require__(48)
   , $assign  = Object.assign;
@@ -36115,7 +36133,7 @@ module.exports = function(O, D){
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(55)
-  , defined   = __webpack_require__(30);
+  , defined   = __webpack_require__(31);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function(TO_STRING){
@@ -36155,7 +36173,7 @@ var ctx            = __webpack_require__(8)
   , toObject       = __webpack_require__(29)
   , call           = __webpack_require__(86)
   , isArrayIter    = __webpack_require__(84)
-  , toLength       = __webpack_require__(35)
+  , toLength       = __webpack_require__(36)
   , createProperty = __webpack_require__(146)
   , getIterFn      = __webpack_require__(95);
 
@@ -36243,7 +36261,7 @@ $export($export.S + $export.F, 'Object', {assign: __webpack_require__(152)});
 
 var $export = __webpack_require__(3)
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-$export($export.S, 'Object', {create: __webpack_require__(33)});
+$export($export.S, 'Object', {create: __webpack_require__(34)});
 
 /***/ }),
 /* 165 */
@@ -36273,7 +36291,7 @@ $export($export.S, 'Object', {setPrototypeOf: __webpack_require__(157).set});
 
 "use strict";
 
-var LIBRARY            = __webpack_require__(32)
+var LIBRARY            = __webpack_require__(33)
   , global             = __webpack_require__(2)
   , ctx                = __webpack_require__(8)
   , classof            = __webpack_require__(45)
@@ -36281,7 +36299,7 @@ var LIBRARY            = __webpack_require__(32)
   , isObject           = __webpack_require__(10)
   , aFunction          = __webpack_require__(43)
   , anInstance         = __webpack_require__(44)
-  , forOf              = __webpack_require__(31)
+  , forOf              = __webpack_require__(32)
   , speciesConstructor = __webpack_require__(158)
   , task               = __webpack_require__(94).set
   , microtask          = __webpack_require__(151)()
@@ -36606,7 +36624,7 @@ var global         = __webpack_require__(2)
   , $fails         = __webpack_require__(11)
   , shared         = __webpack_require__(54)
   , setToStringTag = __webpack_require__(28)
-  , uid            = __webpack_require__(36)
+  , uid            = __webpack_require__(37)
   , wks            = __webpack_require__(1)
   , wksExt         = __webpack_require__(58)
   , wksDefine      = __webpack_require__(57)
@@ -36617,7 +36635,7 @@ var global         = __webpack_require__(2)
   , toIObject      = __webpack_require__(13)
   , toPrimitive    = __webpack_require__(56)
   , createDesc     = __webpack_require__(27)
-  , _create        = __webpack_require__(33)
+  , _create        = __webpack_require__(34)
   , gOPNExt        = __webpack_require__(154)
   , $GOPD          = __webpack_require__(89)
   , $DP            = __webpack_require__(4)
@@ -36745,10 +36763,10 @@ if(!USE_NATIVE){
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f   = $defineProperty;
   __webpack_require__(90).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(34).f  = $propertyIsEnumerable;
+  __webpack_require__(35).f  = $propertyIsEnumerable;
   __webpack_require__(51).f = $getOwnPropertySymbols;
 
-  if(DESCRIPTORS && !__webpack_require__(32)){
+  if(DESCRIPTORS && !__webpack_require__(33)){
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 

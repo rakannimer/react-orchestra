@@ -5,6 +5,7 @@ import NoteFactory from './components/NoteFactory';
 import KeyBinding from './components/KeyBinding';
 // import NoteHelpers from './utils/NoteHelpers';
 import { InstrumentHelpers } from './InstrumentJS/src/';
+import MusicManager from './MusicManager';
 
 window.isTouchDevice = 'ontouchstart' in document.documentElement;
 
@@ -15,6 +16,7 @@ export default {
   NoteFactory,
   KeyBinding,
   InstrumentHelpers,
+  MusicManager,
 //  NoteHelpers
 };
 
@@ -25,5 +27,6 @@ export {
   NoteFactory,
   KeyBinding,
   InstrumentHelpers,
+  MusicManager,
 //  NoteHelpers
 };

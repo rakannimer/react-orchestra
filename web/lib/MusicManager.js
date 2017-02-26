@@ -310,3 +310,16 @@ exports.getNoteBlob = getNoteBlob;
 exports.getSoundFromRemote = getSoundFromRemote;
 exports.loadSound = loadSound;
 exports.delay = delay;
+exports.default = {
+  generateNoteKey: generateNoteKey,
+  midiURLToMetaAndTracks: midiURLToMetaAndTracks,
+  playSound: playSound,
+  playNote: playNote,
+  sharpToBemol: sharpToBemol,
+  instrumentNameToRemotePath: instrumentNameToRemotePath,
+  stopPlayingNote: stopPlayingNote,
+  getNoteBlob: getNoteBlob,
+  getSoundFromRemote: getSoundFromRemote,
+  loadSound: loadSound,
+  delay: delay
+};

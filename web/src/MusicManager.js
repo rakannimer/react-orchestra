@@ -100,3 +100,17 @@ export {
   loadSound,
   delay,
 };
+
+export default {
+  generateNoteKey,
+  midiURLToMetaAndTracks,
+  playSound,
+  playNote,
+  sharpToBemol,
+  instrumentNameToRemotePath,
+  stopPlayingNote,
+  getNoteBlob,
+  getSoundFromRemote,
+  loadSound,
+  delay,
+};
