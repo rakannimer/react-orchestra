@@ -36,7 +36,7 @@ const loadSound = async (instrumentName, noteName) => {
   return noteBlob;
 };
 
-const playSound = noteBlob => new Promise((resolve, reject) => {
+const playSound = (noteBlob, { gain = 1 }) => new Promise((resolve, reject) => {
   audioContext.decodeAudioData(
       noteBlob,
       async (buffer) => {
@@ -46,6 +46,12 @@ const playSound = noteBlob => new Promise((resolve, reject) => {
         source.buffer = buffer;
         // connect the source to the context's destination (the speakers)
         source.connect(audioContext.destination);
+        // Create a gain node.
+        const gainNode = audioContext.createGain();
+        source.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        // Reduce the volume.
+        gainNode.gain.value = gain;
         source.start(0);
         resolve(source);
       },
@@ -55,9 +61,9 @@ const playSound = noteBlob => new Promise((resolve, reject) => {
   );
 });
 
-const playNote = async (instrumentName, noteName) => {
+const playNote = async (instrumentName, noteName, { gain = 1 }) => {
   const noteBlob = await getNoteBlob(instrumentName, noteName);
-  return await playSound(noteBlob);
+  return await playSound(noteBlob, { gain });
 };
 
 const stopPlayingNote = async (noteBuffer, fadeOutDuration = 700) => {

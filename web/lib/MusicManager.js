@@ -157,11 +157,13 @@ var loadSound = function () {
   };
 }();
 
-var playSound = function playSound(noteBlob) {
+var playSound = function playSound(noteBlob, _ref4) {
+  var _ref4$gain = _ref4.gain,
+      gain = _ref4$gain === undefined ? 1 : _ref4$gain;
   return new _promise2.default(function (resolve, reject) {
     _AudioContextSingleton2.default.decodeAudioData(noteBlob, function () {
-      var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(buffer) {
-        var source;
+      var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(buffer) {
+        var source, gainNode;
         return _regenerator2.default.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
@@ -173,10 +175,17 @@ var playSound = function playSound(noteBlob) {
                 source.buffer = buffer;
                 // connect the source to the context's destination (the speakers)
                 source.connect(_AudioContextSingleton2.default.destination);
+                // Create a gain node.
+                gainNode = _AudioContextSingleton2.default.createGain();
+
+                source.connect(gainNode);
+                gainNode.connect(_AudioContextSingleton2.default.destination);
+                // Reduce the volume.
+                gainNode.gain.value = gain;
                 source.start(0);
                 resolve(source);
 
-              case 5:
+              case 9:
               case 'end':
                 return _context4.stop();
             }
@@ -185,7 +194,7 @@ var playSound = function playSound(noteBlob) {
       }));
 
       return function (_x7) {
-        return _ref4.apply(this, arguments);
+        return _ref5.apply(this, arguments);
       };
     }(), function (err) {
       reject(err);
@@ -194,7 +203,9 @@ var playSound = function playSound(noteBlob) {
 };
 
 var playNote = function () {
-  var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(instrumentName, noteName) {
+  var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(instrumentName, noteName, _ref7) {
+    var _ref7$gain = _ref7.gain,
+        gain = _ref7$gain === undefined ? 1 : _ref7$gain;
     var noteBlob;
     return _regenerator2.default.wrap(function _callee5$(_context5) {
       while (1) {
@@ -206,7 +217,7 @@ var playNote = function () {
           case 2:
             noteBlob = _context5.sent;
             _context5.next = 5;
-            return playSound(noteBlob);
+            return playSound(noteBlob, { gain: gain });
 
           case 5:
             return _context5.abrupt('return', _context5.sent);
@@ -219,13 +230,13 @@ var playNote = function () {
     }, _callee5, undefined);
   }));
 
-  return function playNote(_x8, _x9) {
-    return _ref5.apply(this, arguments);
+  return function playNote(_x8, _x9, _x10) {
+    return _ref6.apply(this, arguments);
   };
 }();
 
 var stopPlayingNote = function () {
-  var _ref6 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(noteBuffer) {
+  var _ref8 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(noteBuffer) {
     var fadeOutDuration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 700;
     return _regenerator2.default.wrap(function _callee6$(_context6) {
       while (1) {
@@ -254,8 +265,8 @@ var stopPlayingNote = function () {
     }, _callee6, undefined, [[0, 6]]);
   }));
 
-  return function stopPlayingNote(_x10) {
-    return _ref6.apply(this, arguments);
+  return function stopPlayingNote(_x11) {
+    return _ref8.apply(this, arguments);
   };
 }();
 
@@ -271,7 +282,7 @@ var sharpToBemol = function sharpToBemol(noteName) {
 };
 
 var midiURLToMetaAndTracks = function () {
-  var _ref7 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7(midiURL) {
+  var _ref9 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee7(midiURL) {
     var parsedMidi, _MidiIO$getTracksAndM, meta, tracks;
 
     return _regenerator2.default.wrap(function _callee7$(_context7) {
@@ -294,8 +305,8 @@ var midiURLToMetaAndTracks = function () {
     }, _callee7, undefined);
   }));
 
-  return function midiURLToMetaAndTracks(_x12) {
-    return _ref7.apply(this, arguments);
+  return function midiURLToMetaAndTracks(_x13) {
+    return _ref9.apply(this, arguments);
   };
 }();
 

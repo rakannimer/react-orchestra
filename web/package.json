@@ -1,6 +1,6 @@
 {
   "name": "react-orchestra-web",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "react-orchestra React component",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
