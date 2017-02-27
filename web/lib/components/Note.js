@@ -193,7 +193,7 @@ var Note = function (_React$Component) {
 
               (0, _callIfExists2.default)(this.props.onStartPlayingNote, this.props.instrumentName, this.props.name);
               _context4.next = 5;
-              return (0, _MusicManager.playNote)(this.props.instrumentName, this.props.name);
+              return (0, _MusicManager.playNote)(this.props.instrumentName, this.props.name, { gain: this.props.gain });
 
             case 5:
               buffer = _context4.sent;
@@ -301,6 +301,7 @@ Note.defaultProps = {
   loader: _react2.default.createElement('div', null),
   className: '',
   children: _react2.default.createElement('div', null),
+  gain: 1,
   onStopPlayingNote: function onStopPlayingNote() {},
   onStartPlayingNote: function onStartPlayingNote() {}
 };

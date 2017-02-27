@@ -61,7 +61,11 @@ class Note extends React.Component {
     this.setState({ isPlaying: true });
     try {
       callIfExists(this.props.onStartPlayingNote, this.props.instrumentName, this.props.name);
-      const buffer = await playNote(this.props.instrumentName, this.props.name);
+      const buffer = await playNote(
+        this.props.instrumentName,
+        this.props.name,
+        { gain: this.props.gain },
+      );
       this.playingBuffers.push(buffer);
     } catch (err) {
       console.warn('Something wrong happened with the audio api while playing note ');
@@ -113,6 +117,7 @@ Note.defaultProps = {
   loader: <div />,
   className: '',
   children: <div />,
+  gain: 1,
   onStopPlayingNote: () => {},
   onStartPlayingNote: () => {},
 };

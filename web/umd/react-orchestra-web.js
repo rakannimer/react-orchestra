@@ -1,5 +1,5 @@
 /*!
- * react-orchestra-web v1.3.2
+ * react-orchestra-web v1.3.3
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -1846,7 +1846,7 @@ var Note = function (_React$Component) {
 
               __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__utils_callIfExists__["a" /* default */])(this.props.onStartPlayingNote, this.props.instrumentName, this.props.name);
               _context4.next = 5;
-              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["g" /* playNote */])(this.props.instrumentName, this.props.name);
+              return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__MusicManager__["g" /* playNote */])(this.props.instrumentName, this.props.name, { gain: this.props.gain });
 
             case 5:
               buffer = _context4.sent;
@@ -1923,7 +1923,7 @@ var Note = function (_React$Component) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 83
+            lineNumber: 87
           },
           __self: this
         },
@@ -1944,14 +1944,14 @@ var Note = function (_React$Component) {
         }),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 90
         },
         __self: this
       },
       this.props.children || __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 104
         },
         __self: this
       })
@@ -1971,7 +1971,7 @@ Note.defaultProps = {
   loader: __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113
+      lineNumber: 117
     },
     __self: this
   }),
@@ -1979,10 +1979,11 @@ Note.defaultProps = {
   children: __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115
+      lineNumber: 119
     },
     __self: this
   }),
+  gain: 1,
   onStopPlayingNote: function onStopPlayingNote() {},
   onStartPlayingNote: function onStartPlayingNote() {}
 };

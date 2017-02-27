@@ -17,6 +17,7 @@ An HOC that gives functionality to a child UI element
 * `onStartPlayingNote` (*Function*) A callback fired when note stops being played.
 * `interactive` (*Boolean*) Determines if a component should listen to click/tap events.
 * `fadeOutDuration` (*Number*) Fadeout time in milliseconds of a note after it is released. Default is 600 ms.
+* `gain` (*Number*) Sound gain. Defaults to 1.
 * `loader` (*ReactElement*) A loader to render while note is being loaded.
 * `children` (*ReactElement*) A UI component that represents the DOM or native environment.
 
