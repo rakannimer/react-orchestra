@@ -1,95 +1,73 @@
 {
-  "name": "react-orchestra-web",
-  "version": "1.3.3",
-  "description": "react-orchestra React component",
-  "main": "lib/index.js",
-  "jsnext:main": "src/index.js",
-  "module": "src/index.js",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
+  "name": "web-2",
+  "version": "0.1.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "license": "MIT",
   "scripts": {
-    "build": "nwb build-react-component",
-    "clean": "nwb clean-module && npm clean-demo",
-    "start": "nwb serve-react-demo",
-    "test": "./node_modules/.bin/eslint src/platforms/* && ./node_modules/.bin/eslint src/utils/* && ./node_modules/.bin/eslint src/*.js && ./node_modules/.bin/eslint demo/src/**/*.js && jest __tests__/",
-    "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server",
-    "test:jest": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "dependencies": {
-    "bluebird": "^3.4.6",
-    "bulma": "^0.2.3",
-    "chance": "^1.0.4",
-    "classnames": "^2.2.5",
-    "immutability-helper": "^2.0.0",
-    "localforage": "^1.4.3",
-    "lodash": "^4.17.2",
-    "midi-file-parser": "^1.0.0",
-    "midi-writer-js": "^1.4.0",
-    "object-assign": "^4.1.0",
-    "react-keymaster": "^0.1.0",
-    "soundfont-player": "^0.10.5"
-  },
-  "peerDependencies": {
-    "react": "15.x"
+    "start": "parcel ./demo/index.html --open --no-autoinstall",
+    "build": "rm -rf ./dist/ && rollup -c",
+    "test": "jest --coverage",
+    "test:i": "jest --coverage --watch",
+    "commit": "git-cz",
+    "setup:semantic-release": "npx semantic-release-cli setup"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.21.0",
-    "@kadira/storybook-addon-knobs": "^1.7.1",
-    "@kadira/storybook-addon-notes": "^1.0.1",
-    "animate.css": "^3.5.2",
-    "babel": "^6.5.2",
-    "babel-eslint": "^7.1.1",
-    "babel-jest": "^18.0.0",
-    "babel-plugin-transform-async-to-generator": "^6.16.0",
-    "babel-plugin-transform-object-rest-spread": "^6.20.2",
-    "babel-polyfill": "^6.20.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "babel-runtime": "^6.20.0",
-    "enzyme": "^2.6.0",
-    "eslint": "^3.12.2",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.8.0",
-    "file-loader": "^0.9.0",
-    "jest": "^18.0.0",
-    "nwb": "^0.15.6",
-    "randomcolor": "^0.4.4",
-    "react": "^15.4.1",
-    "react-addons-test-utils": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-test-renderer": "^15.4.1",
-    "web-audio-test-api": "^0.5.2",
-    "worker-loader": "^0.7.1"
+    "@babel/core": "^7.1.2",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.0.0",
+    "@types/classnames": "^2.2.6",
+    "@types/jest": "^23.3.3",
+    "@types/localforage": "^0.0.34",
+    "@types/lodash": "^4.14.117",
+    "@types/react": "^16.4.16",
+    "@types/react-dom": "^16.0.8",
+    "git-cz": "^1.7.1",
+    "jest": "^23.6.0",
+    "parcel-bundler": "^1.10.3",
+    "prettier": "^1.14.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-testing-library": "^5.2.0",
+    "rollup": "^0.66.4",
+    "rollup-plugin-typescript2": "^0.17.1",
+    "semantic-release": "^15.9.17",
+    "ts-jest": "^23.10.3",
+    "typescript": "^3.1.1"
   },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "repository": "",
-  "keywords": [
-    "react-component"
-  ],
-  "babel": {
-    "presets": [
-      "react",
-      "es2015"
-    ],
-    "plugins": [
-      "transform-async-to-generator",
-      "transform-object-rest-spread"
-    ]
+  "peerDependencies": {
+    "react": ">= 16.0.0"
   },
   "jest": {
-    "setupFiles": [
-      "<rootDir>/jestEnvironment.js"
+    "preset": "ts-jest",
+    "collectCoverageFrom": [
+      "src/*.{ts,tsx}"
+    ],
+    "testPathIgnorePatterns": [
+      "node_modules/",
+      "/build/",
+      "/dist/"
     ]
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "files": [
+    "dist/"
+  ],
+  "description": "A thing that does some things.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rakannimer/web-2"
+  },
+  "dependencies": {
+    "bulma": "^0.7.2",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
+    "midi-file-parser": "^1.0.0",
+    "midi-writer-js": "^1.5.2",
+    "react-keymaster": "^0.3.1",
+    "render-and-add-props": "^0.5.0",
+    "soundfont-player": "^0.10.7"
   }
 }

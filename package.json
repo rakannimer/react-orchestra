@@ -1,10 +1,13 @@
 {
   "name": "react-orchestra",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A toolbox to build interactive and smart instruments on the web and mobile.",
-  "main": "web/lib/index.js",
+  "main": "web/dist/index.cjs.js",
+  "module": "web/dist/index.esm.js",
+  "react-native": "native/index.js",
   "scripts": {
-    "test": "cd web && npm run test"
+    "test": "cd web && npm run test",
+    "prepublish": "cd web && npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,6 +35,7 @@
     "classnames": "^2.2.5",
     "immutability-helper": "^2.1.2",
     "localforage": "^1.4.3",
+    "lodash": "^4.17.11",
     "midi-file-parser": "^1.0.0",
     "midi-writer-js": "^1.4.0",
     "pre-commit": "^1.2.2",

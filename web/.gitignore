@@ -1,2 +1,7 @@
-/node_modules
-npm-debug.log*
+node_modules/
+dist/
+.cache
+.rpt2_cache
+build/
+coverage/
+.vscode
