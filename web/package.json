@@ -29,7 +29,7 @@
     "classnames": "^2.2.5",
     "immutability-helper": "^2.0.0",
     "localforage": "^1.4.3",
-    "lodash": "^4.17.2",
+    "lodash": "^4.17.19",
     "midi-file-parser": "^1.0.0",
     "midi-writer-js": "^1.4.0",
     "object-assign": "^4.1.0",
